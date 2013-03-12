@@ -18,6 +18,10 @@
 		10259FCF16EFBAC4006FD0CE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10259FCE16EFBAC4006FD0CE /* Default-568h@2x.png */; };
 		10259FD216EFBAC4006FD0CE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10259FD016EFBAC4006FD0CE /* MainStoryboard.storyboard */; };
 		10259FD516EFBAC4006FD0CE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10259FD416EFBAC4006FD0CE /* ViewController.m */; };
+		10259FDD16EFBD96006FD0CE /* TableStroageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10259FDC16EFBD96006FD0CE /* TableStroageTableViewController.m */; };
+		10259FE016EFBDA0006FD0CE /* BlobStorageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10259FDF16EFBDA0006FD0CE /* BlobStorageTableViewController.m */; };
+		10259FE316EFBDAF006FD0CE /* SASTableStorageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10259FE216EFBDAF006FD0CE /* SASTableStorageTableViewController.m */; };
+		10259FE616EFBDBC006FD0CE /* SASBlogStorageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10259FE516EFBDBC006FD0CE /* SASBlogStorageTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,14 @@
 		10259FD116EFBAC4006FD0CE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		10259FD316EFBAC4006FD0CE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		10259FD416EFBAC4006FD0CE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		10259FDB16EFBD96006FD0CE /* TableStroageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableStroageTableViewController.h; sourceTree = "<group>"; };
+		10259FDC16EFBD96006FD0CE /* TableStroageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableStroageTableViewController.m; sourceTree = "<group>"; };
+		10259FDE16EFBDA0006FD0CE /* BlobStorageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlobStorageTableViewController.h; sourceTree = "<group>"; };
+		10259FDF16EFBDA0006FD0CE /* BlobStorageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlobStorageTableViewController.m; sourceTree = "<group>"; };
+		10259FE116EFBDAF006FD0CE /* SASTableStorageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SASTableStorageTableViewController.h; sourceTree = "<group>"; };
+		10259FE216EFBDAF006FD0CE /* SASTableStorageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SASTableStorageTableViewController.m; sourceTree = "<group>"; };
+		10259FE416EFBDBC006FD0CE /* SASBlogStorageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SASBlogStorageTableViewController.h; sourceTree = "<group>"; };
+		10259FE516EFBDBC006FD0CE /* SASBlogStorageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SASBlogStorageTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +101,14 @@
 				10259FD316EFBAC4006FD0CE /* ViewController.h */,
 				10259FD416EFBAC4006FD0CE /* ViewController.m */,
 				10259FBF16EFBAC4006FD0CE /* Supporting Files */,
+				10259FDB16EFBD96006FD0CE /* TableStroageTableViewController.h */,
+				10259FDC16EFBD96006FD0CE /* TableStroageTableViewController.m */,
+				10259FDE16EFBDA0006FD0CE /* BlobStorageTableViewController.h */,
+				10259FDF16EFBDA0006FD0CE /* BlobStorageTableViewController.m */,
+				10259FE116EFBDAF006FD0CE /* SASTableStorageTableViewController.h */,
+				10259FE216EFBDAF006FD0CE /* SASTableStorageTableViewController.m */,
+				10259FE416EFBDBC006FD0CE /* SASBlogStorageTableViewController.h */,
+				10259FE516EFBDBC006FD0CE /* SASBlogStorageTableViewController.m */,
 			);
 			path = StorageDemo;
 			sourceTree = "<group>";
@@ -176,6 +196,10 @@
 				10259FC516EFBAC4006FD0CE /* main.m in Sources */,
 				10259FC916EFBAC4006FD0CE /* AppDelegate.m in Sources */,
 				10259FD516EFBAC4006FD0CE /* ViewController.m in Sources */,
+				10259FDD16EFBD96006FD0CE /* TableStroageTableViewController.m in Sources */,
+				10259FE016EFBDA0006FD0CE /* BlobStorageTableViewController.m in Sources */,
+				10259FE316EFBDAF006FD0CE /* SASTableStorageTableViewController.m in Sources */,
+				10259FE616EFBDBC006FD0CE /* SASBlogStorageTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
