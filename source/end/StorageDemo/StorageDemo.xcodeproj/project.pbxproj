@@ -22,6 +22,13 @@
 		10259FE016EFBDA0006FD0CE /* BlobStorageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10259FDF16EFBDA0006FD0CE /* BlobStorageTableViewController.m */; };
 		10259FE316EFBDAF006FD0CE /* SASTableStorageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10259FE216EFBDAF006FD0CE /* SASTableStorageTableViewController.m */; };
 		10259FE616EFBDBC006FD0CE /* SASBlogStorageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10259FE516EFBDBC006FD0CE /* SASBlogStorageTableViewController.m */; };
+		10259FEA16EFC121006FD0CE /* WindowsAzureMobileServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10259FE916EFC121006FD0CE /* WindowsAzureMobileServices.framework */; };
+		10259FED16EFC146006FD0CE /* StorageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 10259FEC16EFC146006FD0CE /* StorageService.m */; };
+		10259FF016EFC68B006FD0CE /* TableRowsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10259FEF16EFC68B006FD0CE /* TableRowsTableViewController.m */; };
+		10259FF316EFD363006FD0CE /* EntityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 10259FF216EFCFFF006FD0CE /* EntityTableViewCell.m */; };
+		10259FF716EFD3EA006FD0CE /* WATableEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 10259FF616EFD3EA006FD0CE /* WATableEntity.m */; };
+		10259FFB16EFDCE1006FD0CE /* NewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10259FFA16EFDCE1006FD0CE /* NewTableViewController.m */; };
+		10259FFE16EFDE64006FD0CE /* ModifyTableRowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10259FFD16EFDE64006FD0CE /* ModifyTableRowViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +56,20 @@
 		10259FE216EFBDAF006FD0CE /* SASTableStorageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SASTableStorageTableViewController.m; sourceTree = "<group>"; };
 		10259FE416EFBDBC006FD0CE /* SASBlogStorageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SASBlogStorageTableViewController.h; sourceTree = "<group>"; };
 		10259FE516EFBDBC006FD0CE /* SASBlogStorageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SASBlogStorageTableViewController.m; sourceTree = "<group>"; };
+		10259FE916EFC121006FD0CE /* WindowsAzureMobileServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WindowsAzureMobileServices.framework; sourceTree = "<group>"; };
+		10259FEB16EFC146006FD0CE /* StorageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageService.h; sourceTree = "<group>"; };
+		10259FEC16EFC146006FD0CE /* StorageService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageService.m; sourceTree = "<group>"; };
+		10259FEE16EFC68B006FD0CE /* TableRowsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableRowsTableViewController.h; sourceTree = "<group>"; };
+		10259FEF16EFC68B006FD0CE /* TableRowsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableRowsTableViewController.m; sourceTree = "<group>"; };
+		10259FF116EFCFFF006FD0CE /* EntityTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EntityTableViewCell.h; sourceTree = "<group>"; };
+		10259FF216EFCFFF006FD0CE /* EntityTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EntityTableViewCell.m; sourceTree = "<group>"; };
+		10259FF516EFD3EA006FD0CE /* WATableEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WATableEntity.h; sourceTree = "<group>"; };
+		10259FF616EFD3EA006FD0CE /* WATableEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WATableEntity.m; sourceTree = "<group>"; };
+		10259FF816EFD415006FD0CE /* NSString+URLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncode.h"; sourceTree = "<group>"; };
+		10259FF916EFDCE1006FD0CE /* NewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTableViewController.h; sourceTree = "<group>"; };
+		10259FFA16EFDCE1006FD0CE /* NewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTableViewController.m; sourceTree = "<group>"; };
+		10259FFC16EFDE64006FD0CE /* ModifyTableRowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyTableRowViewController.h; sourceTree = "<group>"; };
+		10259FFD16EFDE64006FD0CE /* ModifyTableRowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyTableRowViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +80,7 @@
 				10259FB916EFBAC4006FD0CE /* UIKit.framework in Frameworks */,
 				10259FBB16EFBAC4006FD0CE /* Foundation.framework in Frameworks */,
 				10259FBD16EFBAC4006FD0CE /* CoreGraphics.framework in Frameworks */,
+				10259FEA16EFC121006FD0CE /* WindowsAzureMobileServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +107,7 @@
 		10259FB716EFBAC4006FD0CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				10259FE916EFC121006FD0CE /* WindowsAzureMobileServices.framework */,
 				10259FB816EFBAC4006FD0CE /* UIKit.framework */,
 				10259FBA16EFBAC4006FD0CE /* Foundation.framework */,
 				10259FBC16EFBAC4006FD0CE /* CoreGraphics.framework */,
@@ -95,6 +118,7 @@
 		10259FBE16EFBAC4006FD0CE /* StorageDemo */ = {
 			isa = PBXGroup;
 			children = (
+				10259FF416EFD3D2006FD0CE /* StorageFiles */,
 				10259FC716EFBAC4006FD0CE /* AppDelegate.h */,
 				10259FC816EFBAC4006FD0CE /* AppDelegate.m */,
 				10259FD016EFBAC4006FD0CE /* MainStoryboard.storyboard */,
@@ -109,6 +133,14 @@
 				10259FE216EFBDAF006FD0CE /* SASTableStorageTableViewController.m */,
 				10259FE416EFBDBC006FD0CE /* SASBlogStorageTableViewController.h */,
 				10259FE516EFBDBC006FD0CE /* SASBlogStorageTableViewController.m */,
+				10259FEB16EFC146006FD0CE /* StorageService.h */,
+				10259FEC16EFC146006FD0CE /* StorageService.m */,
+				10259FEE16EFC68B006FD0CE /* TableRowsTableViewController.h */,
+				10259FEF16EFC68B006FD0CE /* TableRowsTableViewController.m */,
+				10259FF916EFDCE1006FD0CE /* NewTableViewController.h */,
+				10259FFA16EFDCE1006FD0CE /* NewTableViewController.m */,
+				10259FFC16EFDE64006FD0CE /* ModifyTableRowViewController.h */,
+				10259FFD16EFDE64006FD0CE /* ModifyTableRowViewController.m */,
 			);
 			path = StorageDemo;
 			sourceTree = "<group>";
@@ -125,6 +157,18 @@
 				10259FCE16EFBAC4006FD0CE /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		10259FF416EFD3D2006FD0CE /* StorageFiles */ = {
+			isa = PBXGroup;
+			children = (
+				10259FF816EFD415006FD0CE /* NSString+URLEncode.h */,
+				10259FF516EFD3EA006FD0CE /* WATableEntity.h */,
+				10259FF616EFD3EA006FD0CE /* WATableEntity.m */,
+				10259FF116EFCFFF006FD0CE /* EntityTableViewCell.h */,
+				10259FF216EFCFFF006FD0CE /* EntityTableViewCell.m */,
+			);
+			name = StorageFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10259FF316EFD363006FD0CE /* EntityTableViewCell.m in Sources */,
 				10259FC516EFBAC4006FD0CE /* main.m in Sources */,
 				10259FC916EFBAC4006FD0CE /* AppDelegate.m in Sources */,
 				10259FD516EFBAC4006FD0CE /* ViewController.m in Sources */,
@@ -200,6 +245,11 @@
 				10259FE016EFBDA0006FD0CE /* BlobStorageTableViewController.m in Sources */,
 				10259FE316EFBDAF006FD0CE /* SASTableStorageTableViewController.m in Sources */,
 				10259FE616EFBDBC006FD0CE /* SASBlogStorageTableViewController.m in Sources */,
+				10259FED16EFC146006FD0CE /* StorageService.m in Sources */,
+				10259FF016EFC68B006FD0CE /* TableRowsTableViewController.m in Sources */,
+				10259FF716EFD3EA006FD0CE /* WATableEntity.m in Sources */,
+				10259FFB16EFDCE1006FD0CE /* NewTableViewController.m in Sources */,
+				10259FFE16EFDE64006FD0CE /* ModifyTableRowViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,9 +334,17 @@
 		10259FD916EFBAC4006FD0CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StorageDemo/StorageDemo-Prefix.pch";
 				INFOPLIST_FILE = "StorageDemo/StorageDemo-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -295,9 +353,17 @@
 		10259FDA16EFBAC4006FD0CE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StorageDemo/StorageDemo-Prefix.pch";
 				INFOPLIST_FILE = "StorageDemo/StorageDemo-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -322,6 +388,7 @@
 				10259FDA16EFBAC4006FD0CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
