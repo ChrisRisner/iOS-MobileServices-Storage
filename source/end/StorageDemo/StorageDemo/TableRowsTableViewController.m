@@ -38,6 +38,13 @@
     
     self.storageService = [StorageService getInstance];
     
+    //Subscribe to messages to refresh data
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:@"refreshTableRows" object:nil];
+    
+    [self refreshData];
+}
+
+- (void)refreshData {
     [self.storageService refreshTableRowsOnSuccess:self.tableName withCompletion:^{
         [self.tableView reloadData];
     }];
@@ -120,19 +127,6 @@
 }
 */
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
 
 /*
 // Override to support rearranging the table view.
@@ -206,6 +200,24 @@
             vc.tableName = self.tableName;
             vc.isNewEntity = YES;
         }
+    }
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    //Delete the table row
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        
+        NSDictionary *item = [self.storageService.tableRows objectAtIndex:indexPath.row];
+        WATableEntity *entity = [[WATableEntity alloc] initWithDictionary:[item mutableCopy] fromTable:self.tableName];
+        
+        
+        NSLog(@"Item: %@", item);
+        
+        [self.storageService deleteTableRow:[entity getDictionary] withTableName:self.tableName withCompletion:^{
+            [self refreshData];
+        }];
+        
     }
 }
 

@@ -182,5 +182,26 @@ static StorageService *singletonInstance;
     }];
 }
 
+- (void) deleteTableRow:(NSDictionary *)item withTableName:(NSString *)tableName withCompletion:(CompletionBlock) completion {
+    NSLog(@"Delete Table Row %@", item);
+    
+    //Have to send over all three as params since Mobile Services
+    //will strip everything but the ID from the item dictionary
+    NSDictionary *params = @{ @"tableName" : tableName ,
+                              @"partitionKey" : [item objectForKey:@"PartitionKey"] ,
+                              @"rowKey" : [item objectForKey:@"RowKey"]};
+    
+    [self.tableRowsTable delete:item parameters:params completion:^(NSNumber *itemId, NSError *error) {
+        
+        
+        [self logErrorIfNotNil:error];
+        
+        NSLog(@"Results: %@", itemId);
+        
+        // Let the caller know that we finished
+        completion();
+    }];
+}
+
 
 @end

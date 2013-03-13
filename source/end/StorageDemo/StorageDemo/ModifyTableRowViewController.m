@@ -53,11 +53,17 @@
     if (self.isNewEntity == YES) {
         [storageService insertTableRow:[self.entity getNewEntityDictionary] withTableName:self.tableName withCompletion:^{
             [self.navigationController popViewControllerAnimated:YES];
+            
+            //Posting message to refresh tables
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshTableRows" object:nil];
         }];
     } else {
     
         [storageService updateTableRow:[self.entity getDictionary] withTableName:self.tableName withCompletion:^{
             [self.navigationController popViewControllerAnimated:YES];
+            
+            //Posting message to refresh tables
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshTableRows" object:nil];
         }];
     }
 }
