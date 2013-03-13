@@ -1,5 +1,5 @@
 //
-//  TableStroageTableViewController.h
+//  TableStorageTableViewController.h
 //  StorageDemo
 //
 //  Created by Chris Risner on 3/12/13.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TableStroageTableViewController : UITableViewController
+@interface TableStorageTableViewController : UITableViewController
 
 - (void) refreshData;
 

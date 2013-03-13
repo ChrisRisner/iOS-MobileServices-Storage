@@ -8,7 +8,7 @@
 
 #import "NewTableViewController.h"
 #import "StorageService.h"
-#import "TableStroageTableViewController.h";
+#import "TableStorageTableViewController.h";
 
 @interface NewTableViewController ()
 

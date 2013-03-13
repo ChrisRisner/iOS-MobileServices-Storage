@@ -1,23 +1,23 @@
 //
-//  TableStroageTableViewController.m
+//  TableStorageTableViewController.m
 //  StorageDemo
 //
 //  Created by Chris Risner on 3/12/13.
 //  Copyright (c) 2013 Microsoft DPE. All rights reserved.
 //
 
-#import "TableStroageTableViewController.h"
+#import "TableStorageTableViewController.h"
 #import <WindowsAzureMobileServices/WindowsAzureMobileServices.h>
 #import "StorageService.h"
 #import "TableRowsTableViewController.h"
 
-@interface TableStroageTableViewController ()
+@interface TableStorageTableViewController ()
 
 @property (strong, nonatomic) StorageService *storageService;
 
 @end
 
-@implementation TableStroageTableViewController
+@implementation TableStorageTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
