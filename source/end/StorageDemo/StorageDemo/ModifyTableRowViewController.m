@@ -50,10 +50,16 @@
     }
     //send to Mobile Services
     StorageService *storageService = [StorageService getInstance];
-    [storageService updateTableRow:[self.entity getDictionary] withTableName:self.tableName withCompletion:^{
-        [self.navigationController popViewControllerAnimated:YES];
-    }];
-    //pop view
+    if (self.isNewEntity == YES) {
+        [storageService insertTableRow:[self.entity getNewEntityDictionary] withTableName:self.tableName withCompletion:^{
+            [self.navigationController popViewControllerAnimated:YES];
+        }];
+    } else {
+    
+        [storageService updateTableRow:[self.entity getDictionary] withTableName:self.tableName withCompletion:^{
+            [self.navigationController popViewControllerAnimated:YES];
+        }];
+    }
 }
 
 #pragma mark - Table view data source
@@ -82,12 +88,13 @@
      UILabel *label = (UILabel *)[cell viewWithTag:1];
     label.text = [self.entity.keys objectAtIndex:indexPath.row];
     UITextField *txtValue = (UITextField *)[cell viewWithTag:2];
+    if (self.isNewEntity == NO) {
     txtValue.text = [self.entity objectForKey:label.text];
-    if ([label.text isEqualToString:@"PartitionKey"] ||
-        [label.text isEqualToString:@"RowKey"]) {
-        txtValue.enabled = NO;
-        txtValue.backgroundColor = [UIColor lightGrayColor];
-
+        if ([label.text isEqualToString:@"PartitionKey"] ||
+            [label.text isEqualToString:@"RowKey"]) {
+            txtValue.enabled = NO;
+            txtValue.backgroundColor = [UIColor lightGrayColor];
+        }
     }
      
      return cell;

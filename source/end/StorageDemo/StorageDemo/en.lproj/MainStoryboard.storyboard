@@ -325,7 +325,13 @@
                             <outlet property="delegate" destination="5ci-wi-CFP" id="ap7-Cz-uT6"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="YKg-83-0cH"/>
+                    <navigationItem key="navigationItem" id="YKg-83-0cH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bkA-BW-lo9">
+                            <connections>
+                                <segue destination="g85-wE-zn6" kind="push" identifier="addTableRow" id="uba-5N-cHF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tyv-Qo-8gq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -436,9 +442,54 @@
             <point key="canvasLocation" x="231" y="112"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="BlobStorageTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BlobStorageTableViewController.h"/>
+        </class>
+        <class className="EntityTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EntityTableViewCell.h"/>
+        </class>
+        <class className="ModifyTableRowViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ModifyTableRowViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="tappedSaveRow:"/>
+                <relationship kind="outlet" name="lblPartitionKey" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblRowKey" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="NewTableViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="tappedCreateTable:"/>
+                <relationship kind="outlet" name="lblTableName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SASBlogStorageTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SASBlogStorageTableViewController.h"/>
+        </class>
+        <class className="SASTableStorageTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SASTableStorageTableViewController.h"/>
+        </class>
+        <class className="TableRowsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TableRowsTableViewController.h"/>
+        </class>
+        <class className="TableStroageTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TableStroageTableViewController.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="uba-5N-cHF"/>
+    </inferredMetricsTieBreakers>
 </document>

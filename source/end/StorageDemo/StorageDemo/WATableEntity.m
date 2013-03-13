@@ -50,6 +50,10 @@
     return self;
 }
 
+- (void) prepareNewEntity {
+    [_dictionary removeObjectsForKeys:[NSArray arrayWithObjects:@"link",@"etag",@"updated",@"id", nil]];
+}
+
 + (WATableEntity*) createEntityForTable:(NSString*)table
 {
     return [[WATableEntity alloc] initWithDictionary:[NSMutableDictionary dictionaryWithCapacity:10] fromTable:table];
@@ -127,6 +131,10 @@
     //[_dictionary setValue:self.partitionKey forKey:@"PartitionKey"];
     //[_dictionary setValue:self.rowKey forKey:@"RowKey"];
 
+    return _dictionary;
+}
+
+- (NSDictionary *)getNewEntityDictionary {
     return _dictionary;
 }
             

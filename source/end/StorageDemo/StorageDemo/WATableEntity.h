@@ -54,6 +54,9 @@
 
 
 - (NSDictionary *)getDictionary;
+- (NSDictionary *)getNewEntityDictionary;
+
+- (void) prepareNewEntity;
 
 - (id)initWithDictionary:(NSMutableDictionary*)dictionary fromTable:(NSString*)tableName;
 /**

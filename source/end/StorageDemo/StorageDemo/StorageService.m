@@ -138,5 +138,21 @@ static StorageService *singletonInstance;
     }];
 }
 
+- (void) insertTableRow:(NSDictionary *)item withTableName:(NSString *)tableName withCompletion:(CompletionBlock) completion {
+    NSLog(@"Insert Table Row %@", item);
+    
+    NSDictionary *params = @{ @"table" : tableName };
+    
+    [self.tableRowsTable insert:item parameters:params completion:^(NSDictionary *result, NSError *error) {
+        
+        [self logErrorIfNotNil:error];
+        
+        NSLog(@"Results: %@", result);
+        
+        // Let the caller know that we finished
+        completion();
+    }];
+}
+
 
 @end

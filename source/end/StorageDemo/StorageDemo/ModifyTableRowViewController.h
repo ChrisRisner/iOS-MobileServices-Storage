@@ -17,5 +17,6 @@
 
 @property (strong, nonatomic) WATableEntity *entity;
 @property (strong, nonatomic) NSString *tableName;
+@property (nonatomic) BOOL isNewEntity;
 
 @end
