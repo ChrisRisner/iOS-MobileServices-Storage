@@ -43,7 +43,8 @@
            // _timeStamp = [dateFormat dateFromString:timeStamp];// retain];
         }
         
-        [_dictionary removeObjectsForKeys:[NSArray arrayWithObjects:@"PartitionKey", @"RowKey", @"Timestamp", nil]];
+//        [_dictionary removeObjectsForKeys:[NSArray arrayWithObjects:@"PartitionKey", @"RowKey", @"Timestamp", nil]];
+        [_dictionary removeObjectsForKeys:[NSArray arrayWithObjects:@"Timestamp", nil]];
     }
     
     return self;
@@ -122,9 +123,9 @@
     //Adding an ID to this because we're about to insert or update and
     //Mobile Services needs it to be present (in the SDK)
     [_dictionary setValue:@0 forKey:@"id"];
-    //Add partition and row key back in
-    [_dictionary setValue:self.partitionKey forKey:@"PartitionKey"];
-    [_dictionary setValue:self.rowKey forKey:@"RowKey"];
+    //Add partition and row key back in so they'll go over to the server
+    //[_dictionary setValue:self.partitionKey forKey:@"PartitionKey"];
+    //[_dictionary setValue:self.rowKey forKey:@"RowKey"];
 
     return _dictionary;
 }

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WATableEntity.h"
 
-@interface ModifyTableRowViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface ModifyTableRowViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *lblPartitionKey;
 @property (weak, nonatomic) IBOutlet UILabel *lblRowKey;
 - (IBAction)tappedSaveRow:(id)sender;

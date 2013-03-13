@@ -81,8 +81,14 @@
      // Configure the cell...
      UILabel *label = (UILabel *)[cell viewWithTag:1];
     label.text = [self.entity.keys objectAtIndex:indexPath.row];
-    UITextView *txtValue = (UITextView *)[cell viewWithTag:2];
+    UITextField *txtValue = (UITextField *)[cell viewWithTag:2];
     txtValue.text = [self.entity objectForKey:label.text];
+    if ([label.text isEqualToString:@"PartitionKey"] ||
+        [label.text isEqualToString:@"RowKey"]) {
+        txtValue.enabled = NO;
+        txtValue.backgroundColor = [UIColor lightGrayColor];
+
+    }
      
      return cell;
      
@@ -108,6 +114,11 @@
     cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     
     return cell;*/
+}
+
+- (BOOL) textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end
