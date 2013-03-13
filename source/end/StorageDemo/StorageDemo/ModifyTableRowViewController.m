@@ -50,7 +50,7 @@
     }
     //send to Mobile Services
     StorageService *storageService = [StorageService getInstance];
-    [storageService updateTableRow:[self.entity getDictionary] withCompletion:^{
+    [storageService updateTableRow:[self.entity getDictionary] withTableName:self.tableName withCompletion:^{
         [self.navigationController popViewControllerAnimated:YES];
     }];
     //pop view

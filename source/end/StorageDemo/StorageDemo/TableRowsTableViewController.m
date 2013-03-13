@@ -180,6 +180,7 @@
         //vc.tableName = label.text;
         //vc.tableName = cell.textLabel.text;
         vc.entity = entity;
+        vc.tableName = self.tableName;
         
         //self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:vc.tableName style:UIBarButtonItemStylePlain target:nil action:nil];
     }

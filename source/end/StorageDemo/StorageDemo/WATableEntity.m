@@ -122,6 +122,10 @@
     //Adding an ID to this because we're about to insert or update and
     //Mobile Services needs it to be present (in the SDK)
     [_dictionary setValue:@0 forKey:@"id"];
+    //Add partition and row key back in
+    [_dictionary setValue:self.partitionKey forKey:@"PartitionKey"];
+    [_dictionary setValue:self.rowKey forKey:@"RowKey"];
+
     return _dictionary;
 }
             

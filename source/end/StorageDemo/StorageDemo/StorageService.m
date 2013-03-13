@@ -67,7 +67,6 @@ static StorageService *singletonInstance;
 
 - (void) logErrorIfNotNil:(NSError *) error
 {
-    NSLog(@"Need to handle logging better");
     if (error) {
         NSLog(@"ERROR %@", error);
     }
@@ -123,12 +122,16 @@ static StorageService *singletonInstance;
     }];
 }
 
-- (void) updateTableRow:(NSDictionary *)item withCompletion:(CompletionBlock) completion {
+- (void) updateTableRow:(NSDictionary *)item withTableName:(NSString *)tableName withCompletion:(CompletionBlock) completion {
     NSLog(@"Update Table Row %@", item);
-    [self.tableRowsTable update:item completion:^(NSDictionary *result, NSError *error) {
+    
+    NSDictionary *params = @{ @"table" : tableName };
+    
+    [self.tableRowsTable update:item parameters:params completion:^(NSDictionary *result, NSError *error) {
         
         [self logErrorIfNotNil:error];
         
+        NSLog(@"Results: %@", result);
         
         // Let the caller know that we finished
         completion();

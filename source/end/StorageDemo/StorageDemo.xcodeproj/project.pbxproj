@@ -118,6 +118,8 @@
 		10259FBE16EFBAC4006FD0CE /* StorageDemo */ = {
 			isa = PBXGroup;
 			children = (
+				1025A00016F02F88006FD0CE /* BlobStorage */,
+				10259FFF16F02F82006FD0CE /* TableStorage */,
 				10259FF416EFD3D2006FD0CE /* StorageFiles */,
 				10259FC716EFBAC4006FD0CE /* AppDelegate.h */,
 				10259FC816EFBAC4006FD0CE /* AppDelegate.m */,
@@ -125,22 +127,8 @@
 				10259FD316EFBAC4006FD0CE /* ViewController.h */,
 				10259FD416EFBAC4006FD0CE /* ViewController.m */,
 				10259FBF16EFBAC4006FD0CE /* Supporting Files */,
-				10259FDB16EFBD96006FD0CE /* TableStroageTableViewController.h */,
-				10259FDC16EFBD96006FD0CE /* TableStroageTableViewController.m */,
-				10259FDE16EFBDA0006FD0CE /* BlobStorageTableViewController.h */,
-				10259FDF16EFBDA0006FD0CE /* BlobStorageTableViewController.m */,
-				10259FE116EFBDAF006FD0CE /* SASTableStorageTableViewController.h */,
-				10259FE216EFBDAF006FD0CE /* SASTableStorageTableViewController.m */,
-				10259FE416EFBDBC006FD0CE /* SASBlogStorageTableViewController.h */,
-				10259FE516EFBDBC006FD0CE /* SASBlogStorageTableViewController.m */,
 				10259FEB16EFC146006FD0CE /* StorageService.h */,
 				10259FEC16EFC146006FD0CE /* StorageService.m */,
-				10259FEE16EFC68B006FD0CE /* TableRowsTableViewController.h */,
-				10259FEF16EFC68B006FD0CE /* TableRowsTableViewController.m */,
-				10259FF916EFDCE1006FD0CE /* NewTableViewController.h */,
-				10259FFA16EFDCE1006FD0CE /* NewTableViewController.m */,
-				10259FFC16EFDE64006FD0CE /* ModifyTableRowViewController.h */,
-				10259FFD16EFDE64006FD0CE /* ModifyTableRowViewController.m */,
 			);
 			path = StorageDemo;
 			sourceTree = "<group>";
@@ -169,6 +157,34 @@
 				10259FF216EFCFFF006FD0CE /* EntityTableViewCell.m */,
 			);
 			name = StorageFiles;
+			sourceTree = "<group>";
+		};
+		10259FFF16F02F82006FD0CE /* TableStorage */ = {
+			isa = PBXGroup;
+			children = (
+				10259FDB16EFBD96006FD0CE /* TableStroageTableViewController.h */,
+				10259FDC16EFBD96006FD0CE /* TableStroageTableViewController.m */,
+				10259FE116EFBDAF006FD0CE /* SASTableStorageTableViewController.h */,
+				10259FE216EFBDAF006FD0CE /* SASTableStorageTableViewController.m */,
+				10259FEE16EFC68B006FD0CE /* TableRowsTableViewController.h */,
+				10259FEF16EFC68B006FD0CE /* TableRowsTableViewController.m */,
+				10259FF916EFDCE1006FD0CE /* NewTableViewController.h */,
+				10259FFA16EFDCE1006FD0CE /* NewTableViewController.m */,
+				10259FFC16EFDE64006FD0CE /* ModifyTableRowViewController.h */,
+				10259FFD16EFDE64006FD0CE /* ModifyTableRowViewController.m */,
+			);
+			name = TableStorage;
+			sourceTree = "<group>";
+		};
+		1025A00016F02F88006FD0CE /* BlobStorage */ = {
+			isa = PBXGroup;
+			children = (
+				10259FDE16EFBDA0006FD0CE /* BlobStorageTableViewController.h */,
+				10259FDF16EFBDA0006FD0CE /* BlobStorageTableViewController.m */,
+				10259FE416EFBDBC006FD0CE /* SASBlogStorageTableViewController.h */,
+				10259FE516EFBDBC006FD0CE /* SASBlogStorageTableViewController.m */,
+			);
+			name = BlobStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

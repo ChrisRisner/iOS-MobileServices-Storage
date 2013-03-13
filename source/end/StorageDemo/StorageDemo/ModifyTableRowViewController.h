@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) WATableEntity *entity;
+@property (strong, nonatomic) NSString *tableName;
 
 @end
