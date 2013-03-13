@@ -10,4 +10,6 @@
 
 @interface TableStroageTableViewController : UITableViewController
 
+- (void) refreshData;
+
 @end

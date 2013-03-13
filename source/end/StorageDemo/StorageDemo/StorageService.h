@@ -37,5 +37,6 @@ typedef void (^BusyUpdateBlock) (BOOL busy);
 - (void) updateTableRow:(NSDictionary *)item withTableName:(NSString *)tableName withCompletion:(CompletionBlock) completion;
 - (void) insertTableRow:(NSDictionary *)item withTableName:(NSString *)tableName withCompletion:(CompletionBlock) completion;
 - (void) createTable:(NSString *)tableName withCompletion:(CompletionBlock) completion;
+- (void) deleteTable:(NSString *)tableName withCompletion:(CompletionBlock) completion;
 
 @end

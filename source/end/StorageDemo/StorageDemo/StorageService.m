@@ -168,5 +168,19 @@ static StorageService *singletonInstance;
     }];
 }
 
+- (void) deleteTable:(NSString *)tableName withCompletion:(CompletionBlock) completion {
+    NSDictionary *idItem = @{ @"id" :@0 };
+    NSDictionary *params = @{ @"tableName" : tableName };
+    
+    [self.tablesTable delete:idItem parameters:params completion:^(NSNumber *itemId, NSError *error) {
+        [self logErrorIfNotNil:error];
+        
+        NSLog(@"Results: %@", itemId);
+        
+        // Let the caller know that we finished
+        completion();
+    }];
+}
+
 
 @end

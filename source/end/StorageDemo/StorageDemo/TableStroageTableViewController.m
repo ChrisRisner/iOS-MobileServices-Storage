@@ -34,6 +34,13 @@
 
     self.storageService = [StorageService getInstance];
     
+    [self refreshData];
+    
+    //Subscribe to messages to refresh data
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:@"refreshTables" object:nil];
+}
+
+- (void) refreshData {
     [self.storageService refreshTablesOnSuccess:^{
         [self.tableView reloadData];
     }];
@@ -95,6 +102,22 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    //Delete the table
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        
+        NSDictionary *item = [self.storageService.tables objectAtIndex:indexPath.row];
+        NSLog(@"Item: %@", item);
+        
+        [self.storageService deleteTable:[item objectForKey:@"TableName"] withCompletion:^{
+            [self refreshData];
+        }];
+    }
+}
+
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showTableRows"]) {

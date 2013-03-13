@@ -8,6 +8,7 @@
 
 #import "NewTableViewController.h"
 #import "StorageService.h"
+#import "TableStroageTableViewController.h";
 
 @interface NewTableViewController ()
 
@@ -43,6 +44,8 @@
         StorageService *storageService = [StorageService getInstance];
         [storageService createTable:self.txtTableName.text withCompletion:^{
             [self.navigationController popViewControllerAnimated:YES];
+            //Posting message to refresh tables
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshTables" object:nil];
         }];
 
     }

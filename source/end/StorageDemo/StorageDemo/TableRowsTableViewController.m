@@ -168,6 +168,7 @@
         
         ModifyTableRowViewController *vc = segue.destinationViewController;
         
+        //Get the indexpath for the selected item because it's not sent into this method
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
         NSDictionary *item = [self.storageService.tableRows objectAtIndex:indexPath.row];
