@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface NewTableViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextField *lblTableName;
+@property (weak, nonatomic) IBOutlet UITextField *txtTableName;
+
 - (IBAction)tappedCreateTable:(id)sender;
 
 @end

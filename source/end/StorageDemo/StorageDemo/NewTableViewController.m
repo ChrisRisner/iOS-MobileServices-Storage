@@ -7,6 +7,7 @@
 //
 
 #import "NewTableViewController.h"
+#import "StorageService.h"
 
 @interface NewTableViewController ()
 
@@ -36,5 +37,15 @@
 }
 
 - (IBAction)tappedCreateTable:(id)sender {
+    if ([self.txtTableName.text isEqualToString:@""]) {
+        self.txtTableName.backgroundColor = [UIColor redColor];
+    } else {
+        StorageService *storageService = [StorageService getInstance];
+        [storageService createTable:self.txtTableName.text withCompletion:^{
+            [self.navigationController popViewControllerAnimated:YES];
+        }];
+
+    }
+    
 }
 @end

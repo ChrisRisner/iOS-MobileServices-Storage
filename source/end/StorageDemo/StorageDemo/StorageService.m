@@ -154,5 +154,19 @@ static StorageService *singletonInstance;
     }];
 }
 
+- (void) createTable:(NSString *)tableName withCompletion:(CompletionBlock) completion {
+    NSDictionary *item = @{ @"tableName" : tableName };
+    
+    [self.tablesTable insert:item completion:^(NSDictionary *result, NSError *error) {
+        
+        [self logErrorIfNotNil:error];
+        
+        NSLog(@"Results: %@", result);
+        
+        // Let the caller know that we finished
+        completion();
+    }];
+}
+
 
 @end
