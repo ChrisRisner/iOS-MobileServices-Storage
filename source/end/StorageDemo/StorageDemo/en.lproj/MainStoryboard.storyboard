@@ -113,7 +113,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ZV8-SD-0Cb">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="ZV8-SD-0Cb">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -129,12 +129,99 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Blob Storage" id="K2R-kj-ObG">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="sVn-k7-BWd"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="sVn-k7-BWd">
+                            <connections>
+                                <segue destination="JxU-fv-3fx" kind="push" id="b2r-FQ-qQp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uHZ-6D-IBO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1414" y="-183"/>
+        </scene>
+        <!--New Container View Controller-->
+        <scene sceneID="oVX-nJ-6u1">
+            <objects>
+                <viewController id="JxU-fv-3fx" customClass="NewContainerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hjy-x7-SGL">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Container Name:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7K-1p-zsr">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="137" id="oCe-cE-l3w"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OrC-2Y-Ltj">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="167" id="7sS-oi-jXy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UyQ-Mc-MD7">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="84" id="j0N-Bv-fN1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Create">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedCreateContainer:" destination="JxU-fv-3fx" eventType="touchUpInside" id="O52-C1-Fbi"/>
+                                    <action selector="tappedCreateTable:" destination="H2q-2q-Kht" eventType="touchUpInside" id="FdU-yw-E81"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Is Public:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="giN-yn-dqs">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="92" id="wtL-I6-mNJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bO6-i9-cB6">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="161" id="wM8-Cd-M0d"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Yes"/>
+                                    <segment title="No"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bO6-i9-cB6" firstAttribute="leading" secondItem="OrC-2Y-Ltj" secondAttribute="leading" type="default" id="31k-JY-K4z"/>
+                            <constraint firstItem="giN-yn-dqs" firstAttribute="trailing" secondItem="G7K-1p-zsr" secondAttribute="trailing" type="default" id="40S-ZI-swp"/>
+                            <constraint firstItem="UyQ-Mc-MD7" firstAttribute="centerX" secondItem="hjy-x7-SGL" secondAttribute="centerX" type="default" id="5Hb-cI-xWO"/>
+                            <constraint firstItem="bO6-i9-cB6" firstAttribute="top" secondItem="hjy-x7-SGL" secondAttribute="top" constant="78" id="7YE-i3-fcN"/>
+                            <constraint firstItem="OrC-2Y-Ltj" firstAttribute="trailing" secondItem="hjy-x7-SGL" secondAttribute="trailing" type="default" id="B7v-S9-HPc"/>
+                            <constraint firstItem="OrC-2Y-Ltj" firstAttribute="top" secondItem="hjy-x7-SGL" secondAttribute="top" constant="29" id="F41-FX-IHJ"/>
+                            <constraint firstItem="G7K-1p-zsr" firstAttribute="top" secondItem="hjy-x7-SGL" secondAttribute="top" constant="33" id="Hu4-hn-ELQ"/>
+                            <constraint firstItem="giN-yn-dqs" firstAttribute="baseline" secondItem="bO6-i9-cB6" secondAttribute="baseline" type="default" id="h9k-Yt-Nbj"/>
+                            <constraint firstItem="giN-yn-dqs" firstAttribute="centerY" secondItem="bO6-i9-cB6" secondAttribute="centerY" type="default" id="s3P-PI-OUV"/>
+                            <constraint firstItem="UyQ-Mc-MD7" firstAttribute="top" secondItem="hjy-x7-SGL" secondAttribute="top" constant="161" id="wmD-m5-Uxa"/>
+                            <constraint firstItem="G7K-1p-zsr" firstAttribute="leading" secondItem="hjy-x7-SGL" secondAttribute="leading" type="default" id="xr4-12-7Pc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Bk7-dj-W6j"/>
+                    <connections>
+                        <outlet property="segmentPublic" destination="bO6-i9-cB6" id="Gan-gh-xwD"/>
+                        <outlet property="txtContainerName" destination="OrC-2Y-Ltj" id="dBB-0P-gCF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zmw-aJ-1cE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1925" y="-397"/>
         </scene>
         <!--Blog Storage Table View Controller - SAS Blob Storage-->
         <scene sceneID="wHb-8f-BTf">
@@ -479,50 +566,6 @@
             <point key="canvasLocation" x="231" y="112"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="BlobStorageTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BlobStorageTableViewController.h"/>
-        </class>
-        <class className="EntityTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EntityTableViewCell.h"/>
-        </class>
-        <class className="ModifyTableRowViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ModifyTableRowViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="tappedAdd:"/>
-                <relationship kind="action" name="tappedSaveRow:"/>
-                <relationship kind="outlet" name="lblPartitionKey" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblRowKey" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="viewHeader" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="NewTableViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="tappedCreateTable:"/>
-                <relationship kind="outlet" name="txtTableName" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="SASBlogStorageTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SASBlogStorageTableViewController.h"/>
-        </class>
-        <class className="SASTableStorageTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SASTableStorageTableViewController.h"/>
-        </class>
-        <class className="TableRowsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TableRowsTableViewController.h"/>
-        </class>
-        <class className="TableStorageTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TableStorageTableViewController.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

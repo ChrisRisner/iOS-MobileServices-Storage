@@ -40,4 +40,9 @@ typedef void (^BusyUpdateBlock) (BOOL busy);
 - (void) deleteTable:(NSString *)tableName withCompletion:(CompletionBlock) completion;
 - (void) deleteTableRow:(NSDictionary *)item withTableName:(NSString *)tableName withCompletion:(CompletionBlock) completion;
 
+- (void) refreshContainersOnSuccess:(CompletionBlock) completion;
+- (void) createContainer:(NSString *)containerName withPublicSetting:(BOOL)isPublic withCompletion:(CompletionBlock) completion;
+
+
+
 @end

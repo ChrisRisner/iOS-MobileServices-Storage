@@ -41,6 +41,8 @@ static StorageService *singletonInstance;
     self.tablesTable = [_client getTable:@"Tables"];
     self.tableRowsTable = [_client getTable:@"TableRows"];
     
+    self.containersTable = [_client getTable:@"BlobContainers"];
+    
     self.tables = [[NSMutableArray alloc] init];
     self.busyCount = 0;
     
@@ -202,6 +204,46 @@ static StorageService *singletonInstance;
         completion();
     }];
 }
+
+
+
+
+
+
+
+
+
+#pragma blobs
+
+- (void) refreshContainersOnSuccess:(CompletionBlock) completion{
+    [self.containersTable readWithCompletion:^(NSArray *results, NSInteger totalCount, NSError *error) {
+        
+        [self logErrorIfNotNil:error];
+        
+        self.containers = [results mutableCopy];
+        
+        // Let the caller know that we finished
+        completion();
+    }];
+}
+
+- (void) createContainer:(NSString *)containerName withPublicSetting:(BOOL)isPublic withCompletion:(CompletionBlock) completion {
+    NSDictionary *item = @{ @"containerName" : containerName };
+    
+    NSDictionary *params = @{ @"isPublic" : [NSNumber numberWithBool:isPublic] };
+    
+    [self.containersTable insert:item parameters:params completion:^(NSDictionary *result, NSError *error) {
+        
+        [self logErrorIfNotNil:error];
+        
+        NSLog(@"Results: %@", result);
+        
+        // Let the caller know that we finished
+        completion();
+    }];
+}
+
+
 
 
 @end

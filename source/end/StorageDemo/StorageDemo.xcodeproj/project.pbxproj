@@ -29,6 +29,7 @@
 		10259FF716EFD3EA006FD0CE /* WATableEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 10259FF616EFD3EA006FD0CE /* WATableEntity.m */; };
 		10259FFB16EFDCE1006FD0CE /* NewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10259FFA16EFDCE1006FD0CE /* NewTableViewController.m */; };
 		10259FFE16EFDE64006FD0CE /* ModifyTableRowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10259FFD16EFDE64006FD0CE /* ModifyTableRowViewController.m */; };
+		1025A04216F7A8C9006FD0CE /* NewContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1025A04116F7A8C9006FD0CE /* NewContainerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,8 @@
 		10259FFA16EFDCE1006FD0CE /* NewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTableViewController.m; sourceTree = "<group>"; };
 		10259FFC16EFDE64006FD0CE /* ModifyTableRowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyTableRowViewController.h; sourceTree = "<group>"; };
 		10259FFD16EFDE64006FD0CE /* ModifyTableRowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyTableRowViewController.m; sourceTree = "<group>"; };
+		1025A04016F7A8C9006FD0CE /* NewContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewContainerViewController.h; sourceTree = "<group>"; };
+		1025A04116F7A8C9006FD0CE /* NewContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewContainerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +186,8 @@
 				10259FDF16EFBDA0006FD0CE /* BlobStorageTableViewController.m */,
 				10259FE416EFBDBC006FD0CE /* SASBlogStorageTableViewController.h */,
 				10259FE516EFBDBC006FD0CE /* SASBlogStorageTableViewController.m */,
+				1025A04016F7A8C9006FD0CE /* NewContainerViewController.h */,
+				1025A04116F7A8C9006FD0CE /* NewContainerViewController.m */,
 			);
 			name = BlobStorage;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 				10259FF716EFD3EA006FD0CE /* WATableEntity.m in Sources */,
 				10259FFB16EFDCE1006FD0CE /* NewTableViewController.m in Sources */,
 				10259FFE16EFDE64006FD0CE /* ModifyTableRowViewController.m in Sources */,
+				1025A04216F7A8C9006FD0CE /* NewContainerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
