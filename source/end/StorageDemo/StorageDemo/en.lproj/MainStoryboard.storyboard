@@ -299,14 +299,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="no1-KI-Uc6">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="no1-KI-Uc6">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="raW-ay-mgf" kind="push" identifier="blobDetails" id="VGL-cH-OrD"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -325,6 +328,95 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zVV-ki-uj5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1843" y="303"/>
+        </scene>
+        <!--Blob Details View Controller-->
+        <scene sceneID="leC-yw-6Tk">
+            <objects>
+                <viewController id="raW-ay-mgf" customClass="BlobDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P3V-nk-yLm">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCZ-xd-QXF">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="58" id="tiG-Dg-h9C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Url:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9z-0v-OhY">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="pO1-hf-EbN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Content-Type:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOn-xs-5VW">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="xMV-iL-xin"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQe-aH-9jL">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="219" id="wBg-3M-fWs"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2w-Nb-3lQ">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HC-BQ-96m">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PF8-73-FaX">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="161" id="0Ar-Ko-c32"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1HC-BQ-96m" firstAttribute="baseline" secondItem="o9z-0v-OhY" secondAttribute="baseline" type="default" id="3zl-wL-HMw"/>
+                            <constraint firstItem="dQe-aH-9jL" firstAttribute="trailing" secondItem="P3V-nk-yLm" secondAttribute="trailing" type="default" id="4IU-CD-pih"/>
+                            <constraint firstItem="AOn-xs-5VW" firstAttribute="top" secondItem="P3V-nk-yLm" secondAttribute="top" constant="89" id="CEG-rW-rZT"/>
+                            <constraint firstItem="oCZ-xd-QXF" firstAttribute="top" secondItem="P3V-nk-yLm" secondAttribute="top" constant="20" symbolic="YES" type="default" id="ETf-vN-oIE"/>
+                            <constraint firstItem="AOn-xs-5VW" firstAttribute="leading" secondItem="P3V-nk-yLm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="EnA-YR-eFH"/>
+                            <constraint firstItem="PF8-73-FaX" firstAttribute="top" secondItem="P3V-nk-yLm" secondAttribute="top" constant="20" symbolic="YES" type="default" id="HPi-pt-AzJ"/>
+                            <constraint firstItem="oCZ-xd-QXF" firstAttribute="leading" secondItem="P3V-nk-yLm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Jkg-vw-e8v"/>
+                            <constraint firstItem="o9z-0v-OhY" firstAttribute="top" secondItem="P3V-nk-yLm" secondAttribute="top" constant="55" id="Nbk-FZ-rAF"/>
+                            <constraint firstAttribute="trailing" secondItem="1HC-BQ-96m" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="PVt-sf-QJH"/>
+                            <constraint firstItem="o9z-0v-OhY" firstAttribute="leading" secondItem="P3V-nk-yLm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Q9E-uB-DnI"/>
+                            <constraint firstItem="dQe-aH-9jL" firstAttribute="leading" secondItem="P3V-nk-yLm" secondAttribute="leading" type="default" id="TP8-nh-ZtF"/>
+                            <constraint firstAttribute="trailing" secondItem="P2w-Nb-3lQ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="UT4-7w-jT6"/>
+                            <constraint firstItem="PF8-73-FaX" firstAttribute="leading" secondItem="1HC-BQ-96m" secondAttribute="leading" type="default" id="WCV-9v-nZL"/>
+                            <constraint firstItem="P2w-Nb-3lQ" firstAttribute="leading" secondItem="1HC-BQ-96m" secondAttribute="leading" type="default" id="XUs-cy-vp6"/>
+                            <constraint firstItem="dQe-aH-9jL" firstAttribute="top" secondItem="P3V-nk-yLm" secondAttribute="top" constant="152" id="jvp-KZ-fg7"/>
+                            <constraint firstItem="P2w-Nb-3lQ" firstAttribute="baseline" secondItem="AOn-xs-5VW" secondAttribute="baseline" type="default" id="smt-my-JA3"/>
+                            <constraint firstAttribute="trailing" secondItem="PF8-73-FaX" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="x4q-Gv-AHI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bpy-49-Cpe"/>
+                    <connections>
+                        <outlet property="imageView" destination="dQe-aH-9jL" id="OTU-3z-7nB"/>
+                        <outlet property="lblContentType" destination="P2w-Nb-3lQ" id="Mnp-hS-Dfb"/>
+                        <outlet property="lblName" destination="PF8-73-FaX" id="7K6-58-EjW"/>
+                        <outlet property="lblUrl" destination="1HC-BQ-96m" id="wMu-TL-qUF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FiP-io-ypd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2184" y="1083"/>
         </scene>
         <!--New Blob View Controller-->
         <scene sceneID="bLq-Ql-IDI">
@@ -692,6 +784,16 @@
         </scene>
     </scenes>
     <classes>
+        <class className="BlobDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BlobDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="lblContentType" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblProperties" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblUrl" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="BlobTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BlobTableViewController.h"/>
         </class>

@@ -10,6 +10,7 @@
 #import "StorageService.h"
 #import <WindowsAzureMobileServices/WindowsAzureMobileServices.h>
 #import "NewBlobViewController.h"
+#import "BlobDetailsViewController.h"
 
 @interface BlobTableViewController ()
 
@@ -153,6 +154,14 @@
         NewBlobViewController *blobVC = segue.destinationViewController;
         //UITableViewCell *cell = (UITableViewCell *)sender;
         blobVC.containerName = self.containerName;
+    } else if ([segue.identifier isEqualToString:@"blobDetails"]) {
+        BlobDetailsViewController *vc = segue.destinationViewController;
+        
+        //Get the indexpath for the selected item because it's not sent into this method
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        NSDictionary *item = [self.storageService.blobs objectAtIndex:indexPath.row];
+        vc.blob = item;
     }
 }
 

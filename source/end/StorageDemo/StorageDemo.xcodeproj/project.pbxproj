@@ -32,6 +32,7 @@
 		1025A04216F7A8C9006FD0CE /* NewContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1025A04116F7A8C9006FD0CE /* NewContainerViewController.m */; };
 		1025A04516F7B1E0006FD0CE /* BlobTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1025A04416F7B1E0006FD0CE /* BlobTableViewController.m */; };
 		1025A04816F7BB1A006FD0CE /* NewBlobViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1025A04716F7BB1A006FD0CE /* NewBlobViewController.m */; };
+		1025A04E16F7DB19006FD0CE /* BlobDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1025A04D16F7DB19006FD0CE /* BlobDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,8 @@
 		1025A04416F7B1E0006FD0CE /* BlobTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlobTableViewController.m; sourceTree = "<group>"; };
 		1025A04616F7BB1A006FD0CE /* NewBlobViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewBlobViewController.h; sourceTree = "<group>"; };
 		1025A04716F7BB1A006FD0CE /* NewBlobViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewBlobViewController.m; sourceTree = "<group>"; };
+		1025A04C16F7DB18006FD0CE /* BlobDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlobDetailsViewController.h; sourceTree = "<group>"; };
+		1025A04D16F7DB19006FD0CE /* BlobDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlobDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +201,8 @@
 				1025A04416F7B1E0006FD0CE /* BlobTableViewController.m */,
 				1025A04616F7BB1A006FD0CE /* NewBlobViewController.h */,
 				1025A04716F7BB1A006FD0CE /* NewBlobViewController.m */,
+				1025A04C16F7DB18006FD0CE /* BlobDetailsViewController.h */,
+				1025A04D16F7DB19006FD0CE /* BlobDetailsViewController.m */,
 			);
 			name = BlobStorage;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 				1025A04216F7A8C9006FD0CE /* NewContainerViewController.m in Sources */,
 				1025A04516F7B1E0006FD0CE /* BlobTableViewController.m in Sources */,
 				1025A04816F7BB1A006FD0CE /* NewBlobViewController.m in Sources */,
+				1025A04E16F7DB19006FD0CE /* BlobDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
