@@ -52,11 +52,18 @@
     for (UITableViewCell *cell in cells) {
         UILabel *label = (UILabel *)[cell viewWithTag:1];
         UITextView *txtValue = (UITextView *)[cell viewWithTag:2];
-        [self.entity setObject:txtValue.text forKey:label.text];
+        UITextView *txtKey = (UITextView *)[cell viewWithTag:3];
+        //If this is the first insertion from the table, use the textview
+        //for key names, otherwise, use the label
+        if (self.isEmptyTable) {
+            [self.entity setObject:txtValue.text forKey:txtKey.text];
+        } else {
+            [self.entity setObject:txtValue.text forKey:label.text];
+        }
     }
     //send to Mobile Services
     StorageService *storageService = [StorageService getInstance];
-    if (self.isNewEntity == YES) {
+    if (self.isNewEntity == YES || self.isEmptyTable == YES) {
         [storageService insertTableRow:[self.entity getNewEntityDictionary] withTableName:self.tableName withCompletion:^{
             [self.navigationController popViewControllerAnimated:YES];
             
@@ -83,6 +90,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    //NSLog(@"Count: %@", [[self.entity keys] count]);
     return [[self.entity keys] count];
 }
 
@@ -97,10 +105,20 @@
      }
      
      // Configure the cell...
-     UILabel *label = (UILabel *)[cell viewWithTag:1];
+    UITextField *txtKey = (UITextField *)[cell viewWithTag:3];
+    UILabel *label = (UILabel *)[cell viewWithTag:1];
     label.text = [self.entity.keys objectAtIndex:indexPath.row];
+    if (self.isEmptyTable) {
+        txtKey.text = label.text;
+        if (![label.text isEqualToString:@"PartitionKey"] &&
+            ![label.text isEqualToString:@"RowKey"]) {
+            [label setHidden:YES];
+            [txtKey setHidden:NO];
+        }
+    }
+    
     UITextField *txtValue = (UITextField *)[cell viewWithTag:2];
-    if (self.isNewEntity == NO) {
+    if (self.isNewEntity == NO && self.isEmptyTable == NO) {
     txtValue.text = [self.entity objectForKey:label.text];
         if ([label.text isEqualToString:@"PartitionKey"] ||
             [label.text isEqualToString:@"RowKey"]) {
@@ -108,7 +126,7 @@
             txtValue.backgroundColor = [UIColor lightGrayColor];
         }
     }
-     
+    
      return cell;
      
     /*
@@ -141,5 +159,8 @@
 }
 
 - (IBAction)tappedAdd:(id)sender {
+    self.entity = [WATableEntity createEntityForTable:self.tableName];
+    [self.tableView reloadData];
+    self.tableView.tableHeaderView = nil;
 }
 @end

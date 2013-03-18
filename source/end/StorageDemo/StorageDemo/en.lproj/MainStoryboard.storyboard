@@ -399,15 +399,24 @@
                                                                 <outlet property="delegate" destination="g85-wE-zn6" id="mxS-Vr-VNz"/>
                                                             </connections>
                                                         </textField>
+                                                        <textField hidden="YES" opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YFp-sz-LJP">
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="97" id="KDc-e5-iHU"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                                 <constraints>
+                                                    <constraint firstItem="YFp-sz-LJP" firstAttribute="baseline" secondItem="3pv-wW-MM4" secondAttribute="baseline" type="default" id="40X-gu-VTz"/>
+                                                    <constraint firstItem="YFp-sz-LJP" firstAttribute="leading" secondItem="YKq-x7-GN3" secondAttribute="leading" constant="13" id="E38-WT-y1V"/>
                                                     <constraint firstItem="3pv-wW-MM4" firstAttribute="centerY" secondItem="YKq-x7-GN3" secondAttribute="centerY" type="default" id="LUY-zG-XtY"/>
                                                     <constraint firstItem="a6S-iF-3z1" firstAttribute="leading" secondItem="YKq-x7-GN3" secondAttribute="leading" constant="17" id="MQZ-J3-3mJ"/>
                                                     <constraint firstItem="a6S-iF-3z1" firstAttribute="top" secondItem="YKq-x7-GN3" secondAttribute="top" constant="12" id="PMr-Ma-uRv"/>
-                                                    <constraint firstItem="3pv-wW-MM4" firstAttribute="leading" secondItem="YKq-x7-GN3" secondAttribute="leading" constant="118" id="vVI-UU-MQt"/>
+                                                    <constraint firstItem="3pv-wW-MM4" firstAttribute="leading" secondItem="YFp-sz-LJP" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="rGU-Mw-YMO"/>
                                                 </constraints>
                                             </tableViewCell>
                                         </prototypes>
@@ -470,6 +479,50 @@
             <point key="canvasLocation" x="231" y="112"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="BlobStorageTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BlobStorageTableViewController.h"/>
+        </class>
+        <class className="EntityTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EntityTableViewCell.h"/>
+        </class>
+        <class className="ModifyTableRowViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ModifyTableRowViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="tappedAdd:"/>
+                <relationship kind="action" name="tappedSaveRow:"/>
+                <relationship kind="outlet" name="lblPartitionKey" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblRowKey" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="viewHeader" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="NewTableViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="tappedCreateTable:"/>
+                <relationship kind="outlet" name="txtTableName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SASBlogStorageTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SASBlogStorageTableViewController.h"/>
+        </class>
+        <class className="SASTableStorageTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SASTableStorageTableViewController.h"/>
+        </class>
+        <class className="TableRowsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TableRowsTableViewController.h"/>
+        </class>
+        <class className="TableStorageTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TableStorageTableViewController.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

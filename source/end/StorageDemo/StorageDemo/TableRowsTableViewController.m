@@ -182,12 +182,15 @@
     } else if ([segue.identifier isEqualToString:@"addTableRow"]) {
         
         if (self.storageService.tableRows.count == 0) {
-            UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Error"
-                      message:@"We're not able to add entities to an empty table yet."
-                      delegate:nil
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil];
-            [message show];
+//            UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Error"
+//                      message:@"We're not able to add entities to an empty table yet."
+//                      delegate:nil
+//                      cancelButtonTitle:@"OK"
+//                      otherButtonTitles:nil];
+//            [message show];
+            ModifyTableRowViewController *vc = segue.destinationViewController;
+            vc.isEmptyTable = YES;
+            vc.tableName = self.tableName;
         } else {
         
             NSDictionary *item = [self.storageService.tableRows objectAtIndex:0];
@@ -199,6 +202,7 @@
             vc.entity = entity;
             vc.tableName = self.tableName;
             vc.isNewEntity = YES;
+            vc.isEmptyTable = NO;
         }
     }
 }

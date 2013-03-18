@@ -56,7 +56,16 @@
 
 + (WATableEntity*) createEntityForTable:(NSString*)table
 {
-    return [[WATableEntity alloc] initWithDictionary:[NSMutableDictionary dictionaryWithCapacity:10] fromTable:table];
+    WATableEntity *entity = [[WATableEntity alloc] initWithDictionary:[NSMutableDictionary dictionaryWithCapacity:10] fromTable:table];
+    
+    [entity setObject:@"" forKey:@"PartitionKey"];
+    [entity setObject:@"" forKey:@"RowKey"];
+    for (int n = 2; n < 10; n++) {
+        NSString *rowName = [NSString stringWithFormat:@"Item%i", n];
+        [entity setObject:@"" forKey:rowName];
+    }
+    
+    return entity;
 }
 
 - (void)dealloc

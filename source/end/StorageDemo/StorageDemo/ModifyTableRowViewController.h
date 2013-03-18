@@ -18,6 +18,7 @@
 @property (strong, nonatomic) WATableEntity *entity;
 @property (strong, nonatomic) NSString *tableName;
 @property (nonatomic) BOOL isNewEntity;
+@property (nonatomic) BOOL isEmptyTable;
 @property (weak, nonatomic) IBOutlet UIView *viewHeader;
 - (IBAction)tappedAdd:(id)sender;
 
