@@ -349,9 +349,36 @@
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="akk-lA-gHf">
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <view key="tableHeaderView" contentMode="scaleToFill" id="YEs-Af-Siu">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mmk-7V-n7t">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="73" id="izp-XH-NQ1"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="Add">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="tappedAdd:" destination="g85-wE-zn6" eventType="touchUpInside" id="Dj2-hF-Mv6"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="Mmk-7V-n7t" firstAttribute="top" secondItem="YEs-Af-Siu" secondAttribute="top" type="default" id="Kd7-UP-wkY"/>
+                                                <constraint firstItem="Mmk-7V-n7t" firstAttribute="trailing" secondItem="YEs-Af-Siu" secondAttribute="trailing" type="default" id="uny-3r-MKH"/>
+                                            </constraints>
+                                        </view>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="YKq-x7-GN3">
-                                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                                <rect key="frame" x="0.0" y="80" width="320" height="46"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -417,6 +444,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="akk-lA-gHf" id="hjh-fU-SwR"/>
+                        <outlet property="viewHeader" destination="YEs-Af-Siu" id="cRb-0K-gd2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a3b-Zl-zm2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -442,48 +470,6 @@
             <point key="canvasLocation" x="231" y="112"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="BlobStorageTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BlobStorageTableViewController.h"/>
-        </class>
-        <class className="EntityTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EntityTableViewCell.h"/>
-        </class>
-        <class className="ModifyTableRowViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ModifyTableRowViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="tappedSaveRow:"/>
-                <relationship kind="outlet" name="lblPartitionKey" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblRowKey" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="NewTableViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="tappedCreateTable:"/>
-                <relationship kind="outlet" name="txtTableName" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="SASBlogStorageTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SASBlogStorageTableViewController.h"/>
-        </class>
-        <class className="SASTableStorageTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SASTableStorageTableViewController.h"/>
-        </class>
-        <class className="TableRowsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TableRowsTableViewController.h"/>
-        </class>
-        <class className="TableStorageTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TableStorageTableViewController.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

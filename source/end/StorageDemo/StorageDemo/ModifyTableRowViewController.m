@@ -32,7 +32,13 @@
     
     self.lblPartitionKey.text = self.entity.partitionKey;
     self.lblRowKey.text = self.entity.rowKey;
+    
+    if (self.entity) {
+        [self.viewHeader setHidden:YES];
+        self.tableView.tableHeaderView = nil;
+    }
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -134,4 +140,6 @@
     return YES;
 }
 
+- (IBAction)tappedAdd:(id)sender {
+}
 @end
