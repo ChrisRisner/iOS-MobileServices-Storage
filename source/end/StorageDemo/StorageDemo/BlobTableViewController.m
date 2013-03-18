@@ -7,8 +7,12 @@
 //
 
 #import "BlobTableViewController.h"
+#import "StorageService.h"
+#import <WindowsAzureMobileServices/WindowsAzureMobileServices.h>
 
 @interface BlobTableViewController ()
+
+@property (strong, nonatomic) StorageService *storageService;
 
 @end
 
@@ -27,11 +31,12 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.storageService = [StorageService getInstance];
+    
+    //Subscribe to messages to refresh data
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:@"refreshBlobs" object:nil];
+    
+    [self refreshData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,30 +45,41 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)refreshData {
+    [self.storageService refreshBlobsOnSuccess:self.containerName withCompletion:^{
+        [self.tableView reloadData];
+    }];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [self.storageService.blobs count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
     
-    // Configure the cell...
-    
+    // Set the label on the cell and make sure the label color is black (in case this cell
+    // has been reused and was previously greyed out
+    //    UILabel *label = (UILabel *)[cell viewWithTag:1];
+    //    label.textColor = [UIColor blackColor];
+    NSDictionary *item = [self.storageService.blobs objectAtIndex:indexPath.row];
+    //label.text = [item objectForKey:@"TableName"];
+    cell.textLabel.text = [item objectForKey:@"name"];
     return cell;
+
 }
 
 /*
@@ -116,6 +132,19 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    //Delete the container
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        NSDictionary *item = [self.storageService.blobs objectAtIndex:indexPath.row];
+        NSLog(@"Item: %@", item);
+        
+        [self.storageService deleteBlob:[item objectForKey:@"name"] fromContainer:self.containerName withCompletion:^{
+            [self refreshData];
+        }];
+    }
 }
 
 @end

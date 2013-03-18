@@ -14,6 +14,7 @@
 @property (nonatomic, strong)   MSTable *tablesTable;
 @property (nonatomic, strong)   MSTable *tableRowsTable;
 @property (nonatomic, strong)   MSTable *containersTable;
+@property (nonatomic, strong)   MSTable *blobsTable;
 @property (nonatomic)           NSInteger busyCount;
 
 @end
@@ -42,6 +43,7 @@ static StorageService *singletonInstance;
     self.tableRowsTable = [_client getTable:@"TableRows"];
     
     self.containersTable = [_client getTable:@"BlobContainers"];
+    self.blobsTable = [_client getTable:@"BlobBlobs"];
     
     self.tables = [[NSMutableArray alloc] init];
     self.busyCount = 0;
@@ -257,5 +259,34 @@ static StorageService *singletonInstance;
     }];
 }
 
+- (void) refreshBlobsOnSuccess:(NSString *)containerName withCompletion:(CompletionBlock) completion {
+    
+    
+    NSString *queryString = [NSString stringWithFormat:@"container=%@", containerName];
+    
+    [self.blobsTable readWithQueryString:queryString completion:^(NSArray *results, NSInteger totalCount, NSError *error) {
+        
+        [self logErrorIfNotNil:error];
+        
+        self.blobs = [results mutableCopy];
+        
+        // Let the caller know that we finished
+        completion();
+    }];
+}
+
+- (void) deleteBlob:(NSString *)blobName fromContainer:(NSString *)containerName withCompletion:(CompletionBlock) completion {
+    NSDictionary *idItem = @{ @"id" :@0 };
+    NSDictionary *params = @{ @"containerName" : containerName, @"blobName" : blobName };
+    
+    [self.blobsTable delete:idItem parameters:params completion:^(NSNumber *itemId, NSError *error) {
+        [self logErrorIfNotNil:error];
+        
+        NSLog(@"Results: %@", itemId);
+        
+        // Let the caller know that we finished
+        completion();
+    }];
+}
 
 @end

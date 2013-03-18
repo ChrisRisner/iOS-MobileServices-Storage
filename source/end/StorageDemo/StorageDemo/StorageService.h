@@ -23,6 +23,7 @@ typedef void (^BusyUpdateBlock) (BOOL busy);
 @property (nonatomic, strong)   NSArray *tables;
 @property (nonatomic, strong)   NSArray *tableRows;
 @property (nonatomic, strong)   NSArray *containers;
+@property (nonatomic, strong)   NSArray *blobs;
 @property (nonatomic, strong)   MSClient *client;
 @property (nonatomic, copy)     BusyUpdateBlock busyUpdate;
 
@@ -42,7 +43,8 @@ typedef void (^BusyUpdateBlock) (BOOL busy);
 
 - (void) refreshContainersOnSuccess:(CompletionBlock) completion;
 - (void) createContainer:(NSString *)containerName withPublicSetting:(BOOL)isPublic withCompletion:(CompletionBlock) completion;
-- (void) deleteContainer:(NSString *)tableName withCompletion:(CompletionBlock) completion;
-
+- (void) deleteContainer:(NSString *)containerName withCompletion:(CompletionBlock) completion;
+- (void) refreshBlobsOnSuccess:(NSString *)containerName withCompletion:(CompletionBlock) completion;
+- (void) deleteBlob:(NSString *)blobName fromContainer:(NSString *)containerName withCompletion:(CompletionBlock) completion;
 
 @end

@@ -9,6 +9,7 @@
 #import "ContainerTableViewController.h"
 #import <WindowsAzureMobileServices/WindowsAzureMobileServices.h>
 #import "StorageService.h"
+#import "BlobTableViewController.h"
 
 @interface ContainerTableViewController ()
 
@@ -135,8 +136,11 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    NSLog(@"Prepare for segue from containers");
+    if ([segue.identifier isEqualToString:@"showBlobs"]) {
+        BlobTableViewController *blobVC = segue.destinationViewController;
+        UITableViewCell *cell = (UITableViewCell *)sender;
+        blobVC.containerName = cell.textLabel.text;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {

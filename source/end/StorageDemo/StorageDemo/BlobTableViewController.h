@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BlobTableViewController : UITableViewController
-
+    @property (nonatomic, weak) NSString *containerName;
 @end
