@@ -9,6 +9,7 @@
 #import "BlobTableViewController.h"
 #import "StorageService.h"
 #import <WindowsAzureMobileServices/WindowsAzureMobileServices.h>
+#import "NewBlobViewController.h"
 
 @interface BlobTableViewController ()
 
@@ -144,6 +145,14 @@
         [self.storageService deleteBlob:[item objectForKey:@"name"] fromContainer:self.containerName withCompletion:^{
             [self refreshData];
         }];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"createBlob"]) {
+        NewBlobViewController *blobVC = segue.destinationViewController;
+        //UITableViewCell *cell = (UITableViewCell *)sender;
+        blobVC.containerName = self.containerName;
     }
 }
 

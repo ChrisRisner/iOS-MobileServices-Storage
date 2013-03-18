@@ -15,6 +15,7 @@
 typedef void (^CompletionBlock) ();
 typedef void (^CompletionWithIndexBlock) (NSUInteger index);
 typedef void (^CompletionWithMessagesBlock) (id messages);
+typedef void (^CompletionWithSasBlock) (NSString *sasUrl);
 typedef void (^BusyUpdateBlock) (BOOL busy);
 
 
@@ -46,5 +47,6 @@ typedef void (^BusyUpdateBlock) (BOOL busy);
 - (void) deleteContainer:(NSString *)containerName withCompletion:(CompletionBlock) completion;
 - (void) refreshBlobsOnSuccess:(NSString *)containerName withCompletion:(CompletionBlock) completion;
 - (void) deleteBlob:(NSString *)blobName fromContainer:(NSString *)containerName withCompletion:(CompletionBlock) completion;
+- (void) getSasUrlForNewBlob:(NSString *)blobName forContainer:(NSString *)containerName withCompletion:(CompletionWithSasBlock) completion;
 
 @end

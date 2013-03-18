@@ -289,4 +289,15 @@ static StorageService *singletonInstance;
     }];
 }
 
+- (void) getSasUrlForNewBlob:(NSString *)blobName forContainer:(NSString *)containerName withCompletion:(CompletionWithSasBlock) completion {
+    NSDictionary *item = @{  };
+    NSDictionary *params = @{ @"containerName" : containerName, @"blobName" : blobName };
+    
+    [self.blobsTable insert:item parameters:params completion:^(NSDictionary *item, NSError *error) {
+        NSLog(@"Item: %@", item);
+        
+        completion([item objectForKey:@"sasUrl"]);
+    }];
+}
+
 @end
