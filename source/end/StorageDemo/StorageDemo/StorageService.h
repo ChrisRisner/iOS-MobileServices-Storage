@@ -42,7 +42,7 @@ typedef void (^BusyUpdateBlock) (BOOL busy);
 
 - (void) refreshContainersOnSuccess:(CompletionBlock) completion;
 - (void) createContainer:(NSString *)containerName withPublicSetting:(BOOL)isPublic withCompletion:(CompletionBlock) completion;
-
+- (void) deleteContainer:(NSString *)tableName withCompletion:(CompletionBlock) completion;
 
 
 @end

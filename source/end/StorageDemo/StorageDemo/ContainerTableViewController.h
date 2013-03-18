@@ -1,5 +1,5 @@
 //
-//  BlobStorageTableViewController.h
+//  ContainerTableViewController.h
 //  StorageDemo
 //
 //  Created by Chris Risner on 3/12/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BlobStorageTableViewController : UITableViewController
+@interface ContainerTableViewController : UITableViewController
 
 @end

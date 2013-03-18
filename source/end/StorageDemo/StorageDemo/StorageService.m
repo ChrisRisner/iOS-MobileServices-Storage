@@ -243,7 +243,19 @@ static StorageService *singletonInstance;
     }];
 }
 
-
+- (void) deleteContainer:(NSString *)containerName withCompletion:(CompletionBlock) completion {
+    NSDictionary *idItem = @{ @"id" :@0 };
+    NSDictionary *params = @{ @"containerName" : containerName };
+    
+    [self.containersTable delete:idItem parameters:params completion:^(NSNumber *itemId, NSError *error) {
+        [self logErrorIfNotNil:error];
+        
+        NSLog(@"Results: %@", itemId);
+        
+        // Let the caller know that we finished
+        completion();
+    }];
+}
 
 
 @end

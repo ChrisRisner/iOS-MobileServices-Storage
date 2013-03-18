@@ -1,22 +1,22 @@
 //
-//  BlobStorageTableViewController.m
+//  ContainerTableViewController.m
 //  StorageDemo
 //
 //  Created by Chris Risner on 3/12/13.
 //  Copyright (c) 2013 Microsoft DPE. All rights reserved.
 //
 
-#import "BlobStorageTableViewController.h"
+#import "ContainerTableViewController.h"
 #import <WindowsAzureMobileServices/WindowsAzureMobileServices.h>
 #import "StorageService.h"
 
-@interface BlobStorageTableViewController ()
+@interface ContainerTableViewController ()
 
 @property (strong, nonatomic) StorageService *storageService;
 
 @end
 
-@implementation BlobStorageTableViewController
+@implementation ContainerTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -133,5 +133,24 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    NSLog(@"Prepare for segue from containers");
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    //Delete the container
+    if (editingStyle == UITableViewCellEditingStyleDelete) {        
+        
+        NSDictionary *item = [self.storageService.containers objectAtIndex:indexPath.row];
+        NSLog(@"Item: %@", item);
+        
+        [self.storageService deleteContainer:[item objectForKey:@"name"] withCompletion:^{
+            [self refreshData];
+        }];
+    }
+}
+
 
 @end

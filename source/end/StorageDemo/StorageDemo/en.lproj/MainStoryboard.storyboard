@@ -104,23 +104,26 @@
             </objects>
             <point key="canvasLocation" x="664" y="112"/>
         </scene>
-        <!--Blob Storage Table View Controller - Blob Storage-->
+        <!--Container Table View Controller - Containers-->
         <scene sceneID="gDr-sM-vDr">
             <objects>
-                <tableViewController id="d81-hG-9PK" customClass="BlobStorageTableViewController" sceneMemberID="viewController">
+                <tableViewController id="d81-hG-9PK" customClass="ContainerTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Aa0-70-oft">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="ZV8-SD-0Cb">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="ZV8-SD-0Cb">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="D63-CL-oFC" kind="push" id="2CE-MR-N6k"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -128,7 +131,7 @@
                             <outlet property="delegate" destination="d81-hG-9PK" id="8kM-S2-sUS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Blob Storage" id="K2R-kj-ObG">
+                    <navigationItem key="navigationItem" title="Containers" id="K2R-kj-ObG">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="sVn-k7-BWd">
                             <connections>
                                 <segue destination="JxU-fv-3fx" kind="push" id="b2r-FQ-qQp"/>
@@ -286,6 +289,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rvi-dW-qpM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1420" y="517"/>
+        </scene>
+        <!--Blob Table View Controller-->
+        <scene sceneID="QYf-Fs-aKX">
+            <objects>
+                <tableViewController id="D63-CL-oFC" customClass="BlobTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="yIA-p9-gmk">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="no1-KI-Uc6">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="D63-CL-oFC" id="FwM-fF-i1j"/>
+                            <outlet property="delegate" destination="D63-CL-oFC" id="JWS-mX-fVP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="0Yx-8C-7UV"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zVV-ki-uj5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1843" y="303"/>
         </scene>
         <!--Table Storage Table View Controller - Table Storage-->
         <scene sceneID="vTF-ps-BYw">
@@ -566,6 +599,61 @@
             <point key="canvasLocation" x="231" y="112"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="BlobTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BlobTableViewController.h"/>
+        </class>
+        <class className="ContainerTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContainerTableViewController.h"/>
+        </class>
+        <class className="EntityTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EntityTableViewCell.h"/>
+        </class>
+        <class className="ModifyTableRowViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ModifyTableRowViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="tappedAdd:"/>
+                <relationship kind="action" name="tappedSaveRow:"/>
+                <relationship kind="outlet" name="lblPartitionKey" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblRowKey" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="viewHeader" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="NewContainerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewContainerViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="tappedCreateContainer:"/>
+                <relationship kind="outlet" name="segmentPublic" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="txtContainerName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NewTableViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="tappedCreateTable:"/>
+                <relationship kind="outlet" name="txtTableName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SASBlogStorageTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SASBlogStorageTableViewController.h"/>
+        </class>
+        <class className="SASTableStorageTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SASTableStorageTableViewController.h"/>
+        </class>
+        <class className="TableRowsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TableRowsTableViewController.h"/>
+        </class>
+        <class className="TableStorageTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TableStorageTableViewController.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
