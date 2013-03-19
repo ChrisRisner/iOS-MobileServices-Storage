@@ -20,8 +20,6 @@
 		10259FD516EFBAC4006FD0CE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10259FD416EFBAC4006FD0CE /* ViewController.m */; };
 		10259FDD16EFBD96006FD0CE /* TableStorageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10259FDC16EFBD96006FD0CE /* TableStorageTableViewController.m */; };
 		10259FE016EFBDA0006FD0CE /* ContainerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10259FDF16EFBDA0006FD0CE /* ContainerTableViewController.m */; };
-		10259FE316EFBDAF006FD0CE /* SASTableStorageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10259FE216EFBDAF006FD0CE /* SASTableStorageTableViewController.m */; };
-		10259FE616EFBDBC006FD0CE /* SASBlogStorageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10259FE516EFBDBC006FD0CE /* SASBlogStorageTableViewController.m */; };
 		10259FEA16EFC121006FD0CE /* WindowsAzureMobileServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10259FE916EFC121006FD0CE /* WindowsAzureMobileServices.framework */; };
 		10259FED16EFC146006FD0CE /* StorageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 10259FEC16EFC146006FD0CE /* StorageService.m */; };
 		10259FF016EFC68B006FD0CE /* TableRowsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10259FEF16EFC68B006FD0CE /* TableRowsTableViewController.m */; };
@@ -56,10 +54,6 @@
 		10259FDC16EFBD96006FD0CE /* TableStorageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableStorageTableViewController.m; sourceTree = "<group>"; };
 		10259FDE16EFBDA0006FD0CE /* ContainerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerTableViewController.h; sourceTree = "<group>"; };
 		10259FDF16EFBDA0006FD0CE /* ContainerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerTableViewController.m; sourceTree = "<group>"; };
-		10259FE116EFBDAF006FD0CE /* SASTableStorageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SASTableStorageTableViewController.h; sourceTree = "<group>"; };
-		10259FE216EFBDAF006FD0CE /* SASTableStorageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SASTableStorageTableViewController.m; sourceTree = "<group>"; };
-		10259FE416EFBDBC006FD0CE /* SASBlogStorageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SASBlogStorageTableViewController.h; sourceTree = "<group>"; };
-		10259FE516EFBDBC006FD0CE /* SASBlogStorageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SASBlogStorageTableViewController.m; sourceTree = "<group>"; };
 		10259FE916EFC121006FD0CE /* WindowsAzureMobileServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WindowsAzureMobileServices.framework; sourceTree = "<group>"; };
 		10259FEB16EFC146006FD0CE /* StorageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageService.h; sourceTree = "<group>"; };
 		10259FEC16EFC146006FD0CE /* StorageService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageService.m; sourceTree = "<group>"; };
@@ -176,8 +170,6 @@
 			children = (
 				10259FDB16EFBD96006FD0CE /* TableStorageTableViewController.h */,
 				10259FDC16EFBD96006FD0CE /* TableStorageTableViewController.m */,
-				10259FE116EFBDAF006FD0CE /* SASTableStorageTableViewController.h */,
-				10259FE216EFBDAF006FD0CE /* SASTableStorageTableViewController.m */,
 				10259FEE16EFC68B006FD0CE /* TableRowsTableViewController.h */,
 				10259FEF16EFC68B006FD0CE /* TableRowsTableViewController.m */,
 				10259FF916EFDCE1006FD0CE /* NewTableViewController.h */,
@@ -193,8 +185,6 @@
 			children = (
 				10259FDE16EFBDA0006FD0CE /* ContainerTableViewController.h */,
 				10259FDF16EFBDA0006FD0CE /* ContainerTableViewController.m */,
-				10259FE416EFBDBC006FD0CE /* SASBlogStorageTableViewController.h */,
-				10259FE516EFBDBC006FD0CE /* SASBlogStorageTableViewController.m */,
 				1025A04016F7A8C9006FD0CE /* NewContainerViewController.h */,
 				1025A04116F7A8C9006FD0CE /* NewContainerViewController.m */,
 				1025A04316F7B1DF006FD0CE /* BlobTableViewController.h */,
@@ -279,8 +269,6 @@
 				10259FD516EFBAC4006FD0CE /* ViewController.m in Sources */,
 				10259FDD16EFBD96006FD0CE /* TableStorageTableViewController.m in Sources */,
 				10259FE016EFBDA0006FD0CE /* ContainerTableViewController.m in Sources */,
-				10259FE316EFBDAF006FD0CE /* SASTableStorageTableViewController.m in Sources */,
-				10259FE616EFBDBC006FD0CE /* SASBlogStorageTableViewController.m in Sources */,
 				10259FED16EFC146006FD0CE /* StorageService.m in Sources */,
 				10259FF016EFC68B006FD0CE /* TableRowsTableViewController.m in Sources */,
 				10259FF716EFD3EA006FD0CE /* WATableEntity.m in Sources */,

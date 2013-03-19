@@ -41,35 +41,6 @@
                                     <segue destination="d81-hG-9PK" kind="push" id="a3l-X3-K10"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Foo-uI-sZD">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="175" id="FBD-H9-jgA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Table Storage w/ SAS">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="CDo-74-kG9" kind="push" id="vPw-0n-0DJ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2me-jv-HXN">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Blob Storage w/ SAS">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="9lP-pa-8ib" kind="push" id="uXp-2l-q6N"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Which type of Windows Azure storage do you want to work with?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="286" translatesAutoresizingMaskIntoConstraints="NO" id="tSl-a8-fTB">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="286" id="DvE-Bi-Qpw"/>
@@ -82,18 +53,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2me-jv-HXN" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="6nS-uf-A3N"/>
-                            <constraint firstItem="2me-jv-HXN" firstAttribute="trailing" secondItem="Foo-uI-sZD" secondAttribute="trailing" type="default" id="C85-H6-Nr3"/>
                             <constraint firstItem="tSl-a8-fTB" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="MHe-pa-9Jd"/>
                             <constraint firstItem="lGI-M3-m6n" firstAttribute="trailing" secondItem="Zu0-DQ-lIl" secondAttribute="trailing" type="default" id="VNe-Ma-NKD"/>
-                            <constraint firstItem="2me-jv-HXN" firstAttribute="leading" secondItem="Foo-uI-sZD" secondAttribute="leading" type="default" id="WBV-Ke-0tA"/>
-                            <constraint firstItem="lGI-M3-m6n" firstAttribute="centerX" secondItem="Foo-uI-sZD" secondAttribute="centerX" type="default" id="WQ3-bA-juo"/>
                             <constraint firstItem="Zu0-DQ-lIl" firstAttribute="top" secondItem="3" secondAttribute="top" constant="87" id="Xro-Rn-7fJ"/>
+                            <constraint firstItem="Zu0-DQ-lIl" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="Yur-eY-khL"/>
                             <constraint firstItem="lGI-M3-m6n" firstAttribute="top" secondItem="3" secondAttribute="top" constant="163" id="fVr-cJ-bDo"/>
                             <constraint firstItem="lGI-M3-m6n" firstAttribute="leading" secondItem="Zu0-DQ-lIl" secondAttribute="leading" type="default" id="hGb-4j-xop"/>
-                            <constraint firstItem="Foo-uI-sZD" firstAttribute="top" secondItem="3" secondAttribute="top" constant="248" id="kzV-Ey-DSZ"/>
                             <constraint firstItem="tSl-a8-fTB" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="l7v-me-eKl"/>
-                            <constraint firstItem="2me-jv-HXN" firstAttribute="top" secondItem="3" secondAttribute="top" constant="334" type="user" id="wEq-ht-DXg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Storage Demo" id="uHL-XH-6OD">
@@ -225,70 +191,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zmw-aJ-1cE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1925" y="-397"/>
-        </scene>
-        <!--Blog Storage Table View Controller - SAS Blob Storage-->
-        <scene sceneID="wHb-8f-BTf">
-            <objects>
-                <tableViewController id="9lP-pa-8ib" customClass="SASBlogStorageTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="KYU-Y1-J7q">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="kZC-3G-Lff">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="9lP-pa-8ib" id="zsb-tO-R9j"/>
-                            <outlet property="delegate" destination="9lP-pa-8ib" id="xQr-vZ-XoK"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="SAS Blob Storage" id="913-dh-8Sb">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="OQT-uL-iZS"/>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="02e-2K-XW8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1024" y="979"/>
-        </scene>
-        <!--Table Storage Table View Controller - SAS Table Storage-->
-        <scene sceneID="RCK-8x-gZa">
-            <objects>
-                <tableViewController id="CDo-74-kG9" customClass="SASTableStorageTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="YEe-OT-BeR">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="VAj-4T-usb">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="CDo-74-kG9" id="MO9-lT-jY4"/>
-                            <outlet property="delegate" destination="CDo-74-kG9" id="jyV-BJ-ydt"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="SAS Table Storage" id="1Xg-rq-iFo">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nGu-6p-ZQ4"/>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rvi-dW-qpM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1420" y="517"/>
         </scene>
         <!--Blob Table View Controller-->
         <scene sceneID="QYf-Fs-aKX">
@@ -801,6 +703,76 @@
             <point key="canvasLocation" x="231" y="112"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="BlobDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BlobDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="tappedLoadWithSAS:"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="lblContentType" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblUrl" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="BlobTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BlobTableViewController.h"/>
+        </class>
+        <class className="ContainerTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContainerTableViewController.h"/>
+        </class>
+        <class className="EntityTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EntityTableViewCell.h"/>
+        </class>
+        <class className="ModifyTableRowViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ModifyTableRowViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="tappedAdd:"/>
+                <relationship kind="action" name="tappedSaveRow:"/>
+                <relationship kind="outlet" name="lblPartitionKey" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblRowKey" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="viewHeader" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="NewBlobViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewBlobViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="tappedCreateBlobWithSAS:"/>
+                <relationship kind="action" name="tappedSelectImage:"/>
+                <relationship kind="outlet" name="btnCreateBlob" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnCreateBlobWithSAS" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="txtBlobName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NewContainerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewContainerViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="tappedCreateContainer:"/>
+                <relationship kind="outlet" name="segmentPublic" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="txtContainerName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NewTableViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="tappedCreateTable:"/>
+                <relationship kind="outlet" name="txtTableName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="TableRowsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TableRowsTableViewController.h"/>
+        </class>
+        <class className="TableStorageTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TableStorageTableViewController.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
