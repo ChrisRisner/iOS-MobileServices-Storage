@@ -19,7 +19,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -27,29 +26,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)tappedSelectImage:(id)sender {
+    //Check that they have entered a name for the blob
     if ([self.txtBlobName.text isEqualToString:@""]) {
         self.txtBlobName.backgroundColor = [UIColor redColor];
     } else {
-        
+        //Allow the user to select an image from the gallery
         UIImagePickerController *picker = [[UIImagePickerController alloc] init];
         picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        picker.delegate = self;
-        
+        picker.delegate = self;        
         [self presentViewController:picker animated:YES completion:nil];
     }
 }
@@ -64,11 +56,11 @@
 }
 
 - (IBAction)tappedCreateBlobWithSAS:(id)sender {
-    
+    //Check that they have entered a blob name
     if ([self.txtBlobName.text isEqualToString:@""]) {
         self.txtBlobName.backgroundColor = [UIColor redColor];
     } else {
-        
+        //Get a SAS and then post the image to it
         StorageService *storageService = [StorageService getInstance];
         [storageService getSasUrlForNewBlob:self.txtBlobName.text forContainer:self.containerName withCompletion:^(NSString *sasUrl) {
             [self postBlobWithUrl:sasUrl];
@@ -77,12 +69,9 @@
     }
 }
 
+//Handle doing the post to the SAS URL to save the object into blob storage
 - (void)postBlobWithUrl:(NSString *)sasUrl {
     NSData *imageData = UIImagePNGRepresentation(self.imageView.image);
-    
-    //PUT
-    //ContentType "image/jpeg
-    NSLog(@"SASURL: %@", sasUrl);
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:sasUrl]];
     [request setHTTPMethod:@"PUT"];
     [request addValue:@"image/jpeg" forHTTPHeaderField:@"Content-Type"];
@@ -135,16 +124,8 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-//    NSString* connectionHash = [NSString stringWithFormat:@"%i", connection.hash];
-    
-    //Pull out the stateobject by the connection's hash
-    
-    NSString *txt = [[NSString alloc] initWithData:_receivedData                                          encoding: NSASCIIStringEncoding];
-    NSLog(@"Response data: %@", txt);
-    //Call the callback that was originally sent in for this request
-    //connectionState.callbackBlock(txt);
-    //[callbacks removeObjectForKey:connectionHash];
-    
+//    NSString *txt = [[NSString alloc] initWithData:_receivedData                                          encoding: NSASCIIStringEncoding];
+    //pop the current view
     [self.navigationController popViewControllerAnimated:YES];
     //Posting message to refresh containers
     [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshBlobs" object:nil];

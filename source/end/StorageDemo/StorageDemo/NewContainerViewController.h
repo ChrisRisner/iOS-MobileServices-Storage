@@ -10,8 +10,7 @@
 
 @interface NewContainerViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *txtContainerName;
-- (IBAction)tappedCreateContainer:(id)sender;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentPublic;
-
+- (IBAction)tappedCreateContainer:(id)sender;
 
 @end

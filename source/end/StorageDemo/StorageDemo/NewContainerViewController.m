@@ -19,7 +19,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -27,30 +26,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)tappedCreateContainer:(id)sender {
+    //Check that the user has entered something for the container name
     if ([self.txtContainerName.text isEqualToString:@""]) {
         self.txtContainerName.backgroundColor = [UIColor redColor];
     } else {
         bool isPublic = NO;
         if ([self.segmentPublic selectedSegmentIndex] == 0)
-            isPublic = YES;
-        
+            isPublic = YES;        
         StorageService *storageService = [StorageService getInstance];
+        //Create the new container with the public flag
         [storageService createContainer:self.txtContainerName.text withPublicSetting:isPublic withCompletion:^{
             [self.navigationController popViewControllerAnimated:YES];
             //Posting message to refresh containers
             [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshContainers" object:nil];
-        }];
-        
+        }];        
     }
 }
 @end
