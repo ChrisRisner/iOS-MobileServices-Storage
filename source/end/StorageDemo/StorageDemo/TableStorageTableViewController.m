@@ -1,10 +1,18 @@
-//
-//  TableStorageTableViewController.m
-//  StorageDemo
-//
-//  Created by Chris Risner on 3/12/13.
-//  Copyright (c) 2013 Microsoft DPE. All rights reserved.
-//
+/*
+ Copyright 2013 Microsoft Corp
+ 
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ */
 
 #import "TableStorageTableViewController.h"
 #import <WindowsAzureMobileServices/WindowsAzureMobileServices.h>
@@ -23,7 +31,6 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -31,9 +38,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     self.storageService = [StorageService getInstance];
-    
     [self refreshData];
     
     //Subscribe to messages to refresh data
@@ -66,25 +71,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    static NSString *CellIdentifier = @"Cell";
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-//    
-//    // Configure the cell...
-//    
-//    return cell;
-    
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
-    // Set the label on the cell and make sure the label color is black (in case this cell
-    // has been reused and was previously greyed out
-//    UILabel *label = (UILabel *)[cell viewWithTag:1];
-//    label.textColor = [UIColor blackColor];
+
     NSDictionary *item = [self.storageService.tables objectAtIndex:indexPath.row];
-    //label.text = [item objectForKey:@"TableName"];
     cell.textLabel.text = [item objectForKey:@"TableName"];
     return cell;
 }
@@ -94,23 +87,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     //Delete the table
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        
-        
         NSDictionary *item = [self.storageService.tables objectAtIndex:indexPath.row];
-        NSLog(@"Item: %@", item);
-        
         [self.storageService deleteTable:[item objectForKey:@"TableName"] withCompletion:^{
             [self refreshData];
         }];
@@ -120,14 +102,11 @@
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    //Set the table name on the destination view controller
     if ([segue.identifier isEqualToString:@"showTableRows"]) {
         TableRowsTableViewController *vc = segue.destinationViewController;
         UITableViewCell *cell = (UITableViewCell *)sender;
-        //UILabel *label = (UILabel *)[cell viewWithTag:1];
-        //vc.tableName = label.text;
         vc.tableName = cell.textLabel.text;
-        
-        //self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:vc.tableName style:UIBarButtonItemStylePlain target:nil action:nil];
     }
 }
 
