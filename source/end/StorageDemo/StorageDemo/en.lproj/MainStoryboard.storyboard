@@ -384,12 +384,29 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHb-Uu-9Li">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="124" id="Iuk-RC-gXm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Load with SAS">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedLoadWithSAS:" destination="raW-ay-mgf" eventType="touchUpInside" id="lpC-iL-RuD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="1HC-BQ-96m" firstAttribute="baseline" secondItem="o9z-0v-OhY" secondAttribute="baseline" type="default" id="3zl-wL-HMw"/>
                             <constraint firstItem="dQe-aH-9jL" firstAttribute="trailing" secondItem="P3V-nk-yLm" secondAttribute="trailing" type="default" id="4IU-CD-pih"/>
                             <constraint firstItem="AOn-xs-5VW" firstAttribute="top" secondItem="P3V-nk-yLm" secondAttribute="top" constant="89" id="CEG-rW-rZT"/>
+                            <constraint firstItem="dQe-aH-9jL" firstAttribute="top" secondItem="P3V-nk-yLm" secondAttribute="top" constant="220" id="DUj-kO-I8B"/>
                             <constraint firstItem="oCZ-xd-QXF" firstAttribute="top" secondItem="P3V-nk-yLm" secondAttribute="top" constant="20" symbolic="YES" type="default" id="ETf-vN-oIE"/>
                             <constraint firstItem="AOn-xs-5VW" firstAttribute="leading" secondItem="P3V-nk-yLm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="EnA-YR-eFH"/>
                             <constraint firstItem="PF8-73-FaX" firstAttribute="top" secondItem="P3V-nk-yLm" secondAttribute="top" constant="20" symbolic="YES" type="default" id="HPi-pt-AzJ"/>
@@ -397,12 +414,13 @@
                             <constraint firstItem="o9z-0v-OhY" firstAttribute="top" secondItem="P3V-nk-yLm" secondAttribute="top" constant="55" id="Nbk-FZ-rAF"/>
                             <constraint firstAttribute="trailing" secondItem="1HC-BQ-96m" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="PVt-sf-QJH"/>
                             <constraint firstItem="o9z-0v-OhY" firstAttribute="leading" secondItem="P3V-nk-yLm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Q9E-uB-DnI"/>
+                            <constraint firstAttribute="trailing" secondItem="MHb-Uu-9Li" secondAttribute="trailing" constant="28" id="QdA-Sb-pLC"/>
                             <constraint firstItem="dQe-aH-9jL" firstAttribute="leading" secondItem="P3V-nk-yLm" secondAttribute="leading" type="default" id="TP8-nh-ZtF"/>
                             <constraint firstAttribute="trailing" secondItem="P2w-Nb-3lQ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="UT4-7w-jT6"/>
                             <constraint firstItem="PF8-73-FaX" firstAttribute="leading" secondItem="1HC-BQ-96m" secondAttribute="leading" type="default" id="WCV-9v-nZL"/>
                             <constraint firstItem="P2w-Nb-3lQ" firstAttribute="leading" secondItem="1HC-BQ-96m" secondAttribute="leading" type="default" id="XUs-cy-vp6"/>
-                            <constraint firstItem="dQe-aH-9jL" firstAttribute="top" secondItem="P3V-nk-yLm" secondAttribute="top" constant="152" id="jvp-KZ-fg7"/>
                             <constraint firstItem="P2w-Nb-3lQ" firstAttribute="baseline" secondItem="AOn-xs-5VW" secondAttribute="baseline" type="default" id="smt-my-JA3"/>
+                            <constraint firstItem="MHb-Uu-9Li" firstAttribute="top" secondItem="P3V-nk-yLm" secondAttribute="top" constant="139" id="v0X-NT-eS6"/>
                             <constraint firstAttribute="trailing" secondItem="PF8-73-FaX" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="x4q-Gv-AHI"/>
                         </constraints>
                     </view>
@@ -783,82 +801,6 @@
             <point key="canvasLocation" x="231" y="112"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="BlobDetailsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BlobDetailsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="lblContentType" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblProperties" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblUrl" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="BlobTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BlobTableViewController.h"/>
-        </class>
-        <class className="ContainerTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContainerTableViewController.h"/>
-        </class>
-        <class className="EntityTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EntityTableViewCell.h"/>
-        </class>
-        <class className="ModifyTableRowViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ModifyTableRowViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="tappedAdd:"/>
-                <relationship kind="action" name="tappedSaveRow:"/>
-                <relationship kind="outlet" name="lblPartitionKey" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblRowKey" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="viewHeader" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="NewBlobViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewBlobViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="tappedCreateBlobWithSAS:"/>
-                <relationship kind="action" name="tappedSelectImage:"/>
-                <relationship kind="outlet" name="btnCreateBlob" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnCreateBlobWithSAS" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="txtBlobName" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="NewContainerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewContainerViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="tappedCreateContainer:"/>
-                <relationship kind="outlet" name="segmentPublic" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="txtContainerName" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="NewTableViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="tappedCreateTable:"/>
-                <relationship kind="outlet" name="txtTableName" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="SASBlogStorageTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SASBlogStorageTableViewController.h"/>
-        </class>
-        <class className="SASTableStorageTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SASTableStorageTableViewController.h"/>
-        </class>
-        <class className="TableRowsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TableRowsTableViewController.h"/>
-        </class>
-        <class className="TableStorageTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TableStorageTableViewController.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

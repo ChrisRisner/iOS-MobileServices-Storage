@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblUrl;
 @property (weak, nonatomic) IBOutlet UILabel *lblContentType;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) NSString *containerName;
 @property (strong, nonatomic) NSDictionary *blob;
+- (IBAction)tappedLoadWithSAS:(id)sender;
 
 @end

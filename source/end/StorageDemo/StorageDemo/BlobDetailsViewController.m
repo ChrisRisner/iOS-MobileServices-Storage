@@ -7,6 +7,7 @@
 //
 
 #import "BlobDetailsViewController.h"
+#import "StorageService.h"
 
 @interface BlobDetailsViewController ()
 
@@ -37,9 +38,9 @@
         NSURL *url = [NSURL URLWithString:[self.blob objectForKey:@"url"]];
         NSData *data = [NSData dataWithContentsOfURL:url];
         UIImage *image = [UIImage imageWithData:data];
-//        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+
         self.imageView.image = image;
-        NSLog(@"ImageURL: %@", [self.blob objectForKey:@"url"]);
+//        NSLog(@"ImageURL: %@", [self.blob objectForKey:@"url"]);
     }
 }
 
@@ -49,4 +50,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)tappedLoadWithSAS:(id)sender {
+    
+    StorageService *storageService = [StorageService getInstance];
+    [storageService getSasUrlForNewBlob:[self.blob objectForKey:@"name"] forContainer:self.containerName withCompletion:^(NSString *sasUrl) {
+        NSURL *url = [NSURL URLWithString:sasUrl];
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        UIImage *image = [UIImage imageWithData:data];
+        
+        self.imageView.image = image;
+    }];
+}
 @end

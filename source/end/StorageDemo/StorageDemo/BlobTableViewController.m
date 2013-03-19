@@ -162,6 +162,7 @@
         
         NSDictionary *item = [self.storageService.blobs objectAtIndex:indexPath.row];
         vc.blob = item;
+        vc.containerName = self.containerName;
     }
 }
 
