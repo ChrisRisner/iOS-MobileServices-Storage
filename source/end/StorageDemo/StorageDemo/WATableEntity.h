@@ -18,6 +18,8 @@
 
 /**
  A class that represents an entity ina a Windows Azure table.
+ NOTE: This class was pulled from the old Windows Azure Toolkit to make it 
+ easier to display table data.  It isn't necessary and we could just store the data without it.
  */
 @interface WATableEntity : NSObject {
 @private

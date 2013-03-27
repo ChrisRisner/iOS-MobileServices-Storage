@@ -138,7 +138,7 @@ static StorageService *singletonInstance;
     NSLog(@"Update Table Row %@", item);
     
     NSDictionary *params = @{ @"table" : tableName };
-    
+
     [self.tableRowsTable update:item parameters:params completion:^(NSDictionary *result, NSError *error) {
         
         [self logErrorIfNotNil:error];

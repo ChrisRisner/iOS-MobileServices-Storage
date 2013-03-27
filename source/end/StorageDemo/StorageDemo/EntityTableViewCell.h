@@ -15,7 +15,10 @@
  */
 
 #import <UIKit/UIKit.h>
-
+/**
+ NOTE: This class was pulled from the old Windows Azure Toolkit to make it
+ easier to display table data.  It isn't necessary and we could just store the data without it.
+ */
 @interface EntityTableViewCell : UITableViewCell {
 @private
 	NSMutableArray* _subviews;
