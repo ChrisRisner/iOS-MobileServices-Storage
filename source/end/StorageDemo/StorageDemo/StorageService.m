@@ -41,8 +41,8 @@ static StorageService *singletonInstance;
 -(StorageService *) init
 {
     // Initialize the Mobile Service client with your URL and key
-    MSClient *newClient = [MSClient clientWithApplicationURLString:@"https://storagedemo.azure-mobile.net/"
-            withApplicationKey:@"oZaSIwBYgHrBiCApdCVcatyDxHQRCT23"];
+    MSClient *newClient = [MSClient clientWithApplicationURLString:@"https://mobileserviceurl.azure-mobile.net/"
+            withApplicationKey:@"applicationkey"];
     
     // Add a Mobile Service filter to enable the busy indicator
     self.client = [newClient clientwithFilter:self];
