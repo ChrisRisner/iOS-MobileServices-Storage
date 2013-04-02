@@ -13,7 +13,7 @@ Below you will find requirements and deployment instructions.
 * /source/scripts - This contains copies of the server side scripts and requires script changes noted below.
 
 ## Additional Resources
-
+I've released two blog posts which walks through the code for this sample.  The [first deals with the server side scripts](http://chrisrisner.com/Mobile-Services-and-Windows-Azure-Storage) and talks about how to connect Mobile Services to Storage.  The [second talks about the iOS Client](http://chrisrisner.com/iOS-and-Mobile-Services-and-Windows-Azure-Storage) and how to connect that to the Mobile Service.
 
 #Setting up your Mobile Service
 After creating your Mobile Service in the Windows Azure Portal, you'll need to create tables named "Tables", "TableRows", "BlobContainers", and "BlobBlobs".  After createing these tables, copy the appropriate scripts over.
