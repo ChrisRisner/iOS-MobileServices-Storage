@@ -119,8 +119,6 @@ static StorageService *singletonInstance;
 }
 
 - (void) refreshTableRowsOnSuccess:(NSString *)tableName withCompletion:(CompletionBlock) completion {
-    
-    
     NSString *queryString = [NSString stringWithFormat:@"table=%@", tableName];
     
     [self.tableRowsTable readWithQueryString:queryString completion:^(NSArray *results, NSInteger totalCount, NSError *error) {
@@ -181,7 +179,7 @@ static StorageService *singletonInstance;
 }
 
 - (void) deleteTable:(NSString *)tableName withCompletion:(CompletionBlock) completion {
-    NSDictionary *idItem = @{ @"id" :@0 };
+    NSDictionary *idItem = @{ @"id" :@1 };
     NSDictionary *params = @{ @"tableName" : tableName };
     
     [self.tablesTable delete:idItem parameters:params completion:^(NSNumber *itemId, NSError *error) {
@@ -254,7 +252,7 @@ static StorageService *singletonInstance;
 }
 
 - (void) deleteContainer:(NSString *)containerName withCompletion:(CompletionBlock) completion {
-    NSDictionary *idItem = @{ @"id" :@0 };
+    NSDictionary *idItem = @{ @"id" :@1 };
     NSDictionary *params = @{ @"containerName" : containerName };
     
     [self.containersTable delete:idItem parameters:params completion:^(NSNumber *itemId, NSError *error) {
@@ -284,7 +282,7 @@ static StorageService *singletonInstance;
 }
 
 - (void) deleteBlob:(NSString *)blobName fromContainer:(NSString *)containerName withCompletion:(CompletionBlock) completion {
-    NSDictionary *idItem = @{ @"id" :@0 };
+    NSDictionary *idItem = @{ @"id" :@1 };
     NSDictionary *params = @{ @"containerName" : containerName, @"blobName" : blobName };
     
     [self.blobsTable delete:idItem parameters:params completion:^(NSNumber *itemId, NSError *error) {
