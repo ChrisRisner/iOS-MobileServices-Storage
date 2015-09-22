@@ -1,3 +1,9 @@
+---
+services:
+platforms:
+author: azure
+---
+
 ﻿# iOS - Mobile Services - StorageDemo
 This is a storage sample which makes use of WIndows Azure Mobile Services and Windows Azure Table and Blob Storage.  Mobile Services uses SQL Database for it's normal data storage so we have to do a bit of additional work in order to access Table and Blob Storage.  This sample was built using XCode, the iOS Framework, and the iOS Mobile Services SDK.
 
